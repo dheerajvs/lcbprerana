@@ -1,0 +1,36 @@
+---
+export interface Props {
+  kind?: 'primary' | 'secondary'
+  href?: string
+}
+
+const { kind = 'primary', href } = Astro.props as Props
+---
+
+<a class={kind} {href}><slot /></a>
+
+<style>
+  a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    padding: calc(0.625rem - 1px) 0.75rem;
+    text-decoration: none;
+  }
+  a:hover {
+    filter: brightness(95%);
+    transition: filter 0.2s;
+  }
+  a:active {
+    filter: brightness(85%);
+  }
+  .primary {
+    background-color: var(--color-pri-bg);
+    color: var(--color-pri-fg);
+  }
+  .secondary {
+    background-color: var(--color-sec-bg);
+    color: var(--color-sec-fg);
+  }
+</style>

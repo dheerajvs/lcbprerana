@@ -1,0 +1,110 @@
+---
+import BaseLayout from './BaseLayout.astro'
+
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props as Props
+
+const navItems = [
+  { title: 'Home', url: '/' },
+  { title: 'About', url: '/about' },
+  { title: 'Activities', url: '/activities' },
+  { title: 'Donate', url: '/donate' },
+]
+---
+
+<BaseLayout title={title}>
+  <header>
+    <div>
+      <img src="/img/favicon.png" alt="logo" width="32px" height="32px" />
+      Lions Club of Bangalore Prerana
+    </div>
+    <nav>
+      <ul>
+        {navItems.map(item =>(
+          <li>
+            <a href={item.url}>
+              {item.title}
+              {
+                (title === item.title || title === '' && item.url === '/')
+                && <div class="underline"/>
+              }
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <!-- Social icons? -->
+    <!-- Nav? -->
+    <img src="/img/lci_sig_white.png" alt="Lions Clubs International" /><br />
+    <small
+      >Lions Clubs International is the largest service club organization in the
+      world. Our 1.4 million members are serving locally and globally to help
+      take on some of the biggest challenges facing humanity.</small
+    >
+  </footer>
+</BaseLayout>
+
+<style>
+  .underline {
+    background-color: var(--color-sec-bg);
+  }
+
+  header > div {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+  }
+
+  header img {
+    margin-right: 0.5rem;
+  }
+
+  header nav {
+    background-color: var(--color-pri-bg);
+    color: var(--color-pri-fg);
+    padding: 0;
+  }
+
+  header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  header a {
+    color: inherit;
+    display: block;
+    padding: 15px 0;
+    position: relative;
+    text-decoration: none;
+  }
+
+  header .underline {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  footer {
+    background-color: var(--color-pri-bg);
+    color: var(--color-pri-fg);
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+</style>
