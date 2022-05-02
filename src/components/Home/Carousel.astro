@@ -139,6 +139,8 @@ import Button from 'components/ui/Button.astro'
     padding-top: 75%;
     filter: drop-shadow(0 0 10px #0003);
     perspective: 100px;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   .carousel__viewport {
@@ -158,22 +160,27 @@ import Button from 'components/ui/Button.astro'
     position: relative;
     flex: 0 0 100%;
     width: 100%;
-    background-color: #f99;
     counter-increment: item;
   }
 
-  .carousel__slide:nth-child(even) {
-    background-color: #99f;
+  .carousel__slide > .carousel__snapper {
+    background-size: cover;
   }
 
-  .carousel__slide:before {
-    content: counter(item);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -40%, 70px);
-    color: #fff;
-    font-size: 2em;
+  #carousel__slide1 > .carousel__snapper {
+    background-image: url('/img/Abhayashram-fabric_jewelry.jpg');
+  }
+
+  #carousel__slide2 > .carousel__snapper {
+    background-image: url('/img/Abhayashram-hunger_relief.jpg');
+  }
+
+  #carousel__slide3 > .carousel__snapper {
+    background-image: url('/img/Abhayashram-Warli.jpg');
+  }
+
+  #carousel__slide4 > .carousel__snapper {
+    background-image: url('/img/Abhayashram-hunger_relief.jpg');
   }
 
   .carousel__snapper {
@@ -212,7 +219,7 @@ import Button from 'components/ui/Button.astro'
   .carousel__navigation {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 1.25rem;
     left: 0;
     text-align: center;
   }
@@ -240,7 +247,7 @@ import Button from 'components/ui/Button.astro'
   .carousel__next {
     position: absolute;
     top: 0;
-    margin-top: 37.5%;
+    margin-top: 30%;
     width: 4rem;
     height: 4rem;
     transform: translateY(-50%);
@@ -263,7 +270,7 @@ import Button from 'components/ui/Button.astro'
   .carousel::after {
     content: '';
     z-index: 1;
-    background-color: #333;
+    background-color: var(--color-sec-bg);
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
     background-position: center center;
@@ -275,10 +282,10 @@ import Button from 'components/ui/Button.astro'
   }
 
   .carousel::before {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23000'/%3E%3C/svg%3E");
   }
 
   .carousel::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23000'/%3E%3C/svg%3E");
   }
 </style>
