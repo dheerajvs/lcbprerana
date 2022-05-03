@@ -2,290 +2,105 @@
 import Button from 'components/ui/Button.astro'
 ---
 
-<!-- Ref: https://codepen.io/Schepp/pen/WNbQByE -->
-
-<section class="carousel" aria-label="Gallery">
-  <ol class="carousel__viewport">
-    <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-      <div class="carousel__snapper">
-        <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-        <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
-      </div>
-    </li>
-    <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a
-      >
-      <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a
-      >
-      <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a
-      >
-      <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-    </li>
-  </ol>
-  <aside class="carousel__navigation">
-    <ol class="carousel__navigation-list">
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide1" class="carousel__navigation-button"
-          >Go to slide 1</a
-        >
+<section
+  id="home-activities-carousel"
+  class="splide"
+  aria-label="Recent activities"
+>
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide">
+        <div class="splide__slide__container">
+          <img src="img/Abhayashram-fabric_jewelry.jpg" />
+        </div>
+        <div class="caption">
+          Skill development fabric jewellery workshop for children at Vatsalya
+          Abhayasharam
+        </div>
       </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide2" class="carousel__navigation-button"
-          >Go to slide 2</a
-        >
+      <li class="splide__slide">
+        <div class="splide__slide__container">
+          <img src="img/Abhayashram-hunger_relief.jpg" />
+        </div>
+        <div class="caption">Hunger-relief at Abhayasharam</div>
       </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide3" class="carousel__navigation-button"
-          >Go to slide 3</a
-        >
+      <li class="splide__slide">
+        <div class="splide__slide__container">
+          <img src="img/Abhayashram-Warli.jpg" />
+        </div>
+        <div class="caption">
+          Warli painting workshop for children at Vatsalya Abhayasharam
+        </div>
       </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide4" class="carousel__navigation-button"
-          >Go to slide 4</a
-        >
-      </li>
-    </ol>
-  </aside>
+    </ul>
+  </div>
 </section>
+
 <Button kind="secondary" href="/activities">Read More Stories</Button>
 
+<script is:inline src="/js/splide.min.js"></script>
+<script is:inline
+  >new Splide('#home-activities-carousel', {
+    type: 'loop',
+    height: '15rem',
+    autoplay: true,
+    interval: 4000,
+  }).mount()</script
+>
+
 <style>
-  @keyframes tonext {
-    75% {
-      left: 0;
-    }
-    95% {
-      left: 100%;
-    }
-    98% {
-      left: 100%;
-    }
-    99% {
-      left: 0;
-    }
+  section {
+    margin-bottom: 1rem;
   }
 
-  @keyframes tostart {
-    75% {
-      left: 0;
-    }
-    95% {
-      left: -300%;
-    }
-    98% {
-      left: -300%;
-    }
-    99% {
-      left: 0;
-    }
+  img {
+    border-radius: 0.375rem;
+    max-width: 100%;
+    height: calc(100vw / 1.5);
+    object-fit: cover;
+    object-position: 50% 50%;
   }
 
-  @keyframes snap {
-    96% {
-      scroll-snap-align: center;
-    }
-    97% {
-      scroll-snap-align: none;
-    }
-    99% {
-      scroll-snap-align: none;
-    }
-    100% {
-      scroll-snap-align: center;
-    }
-  }
-
-  * {
-    box-sizing: border-box;
-    scrollbar-color: transparent transparent; /* thumb and track color */
-    scrollbar-width: 0px;
-  }
-
-  *::-webkit-scrollbar {
-    width: 0;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
-  }
-
-  * {
-    -ms-overflow-style: none;
-  }
-
-  ol,
-  li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .carousel {
-    position: relative;
-    padding-top: 75%;
-    filter: drop-shadow(0 0 10px #0003);
-    perspective: 100px;
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
-
-  .carousel__viewport {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    overflow-x: scroll;
-    counter-reset: item;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-  }
-
-  .carousel__slide {
-    position: relative;
-    flex: 0 0 100%;
-    width: 100%;
-    counter-increment: item;
-  }
-
-  .carousel__slide > .carousel__snapper {
-    background-size: cover;
-  }
-
-  #carousel__slide1 > .carousel__snapper {
-    background-image: url('/img/Abhayashram-fabric_jewelry.jpg');
-  }
-
-  #carousel__slide2 > .carousel__snapper {
-    background-image: url('/img/Abhayashram-hunger_relief.jpg');
-  }
-
-  #carousel__slide3 > .carousel__snapper {
-    background-image: url('/img/Abhayashram-Warli.jpg');
-  }
-
-  #carousel__slide4 > .carousel__snapper {
-    background-image: url('/img/Abhayashram-hunger_relief.jpg');
-  }
-
-  .carousel__snapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: center;
-  }
-
-  @media (hover: hover) {
-    .carousel__snapper {
-      animation-name: tonext, snap;
-      animation-timing-function: ease;
-      animation-duration: 4s;
-      animation-iteration-count: infinite;
-    }
-
-    .carousel__slide:last-child .carousel__snapper {
-      animation-name: tostart, snap;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .carousel__snapper {
-      animation-name: none;
-    }
-  }
-
-  .carousel:hover .carousel__snapper,
-  .carousel:focus-within .carousel__snapper {
-    animation-name: none;
-  }
-
-  .carousel__navigation {
-    position: absolute;
-    right: 0;
-    bottom: 1.25rem;
-    left: 0;
+  .caption {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     text-align: center;
   }
-
-  .carousel__navigation-list,
-  .carousel__navigation-item {
-    display: inline-block;
+</style><style is:global>
+  .splide__arrow {
+    background: var(--color-sec-bg);
+    opacity: 1;
+    width: 2rem;
+    height: 2rem;
   }
 
-  .carousel__navigation-button {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #333;
-    background-clip: content-box;
-    border: 0.25rem solid transparent;
-    border-radius: 50%;
-    font-size: 0;
-    transition: transform 0.1s;
+  .splide__arrow:hover:not(:disabled) {
+    filter: brightness(95%);
+    opacity: 1;
   }
 
-  .carousel::before,
-  .carousel::after,
-  .carousel__prev,
-  .carousel__next {
-    position: absolute;
-    top: 0;
-    margin-top: 30%;
-    width: 4rem;
-    height: 4rem;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    font-size: 0;
-    outline: 0;
+  .splide__arrow:active:not(:disabled) {
+    filter: brightness(85%);
+    opacity: 1;
   }
 
-  .carousel::before,
-  .carousel__prev {
+  .splide__arrow--prev {
     left: -1rem;
   }
 
-  .carousel::after,
-  .carousel__next {
+  .splide__arrow--next {
     right: -1rem;
   }
 
-  .carousel::before,
-  .carousel::after {
-    content: '';
-    z-index: 1;
-    background-color: var(--color-sec-bg);
-    background-size: 1.5rem 1.5rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 4rem;
-    text-align: center;
-    pointer-events: none;
+  .splide__pagination {
+    position: static;
   }
 
-  .carousel::before {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23000'/%3E%3C/svg%3E");
+  .splide__pagination__page {
+    background: #b9b9b9;
   }
 
-  .carousel::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23000'/%3E%3C/svg%3E");
+  .splide__pagination__page.is-active {
+    background: #3e3e3e;
   }
 </style>
