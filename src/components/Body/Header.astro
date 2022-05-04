@@ -1,0 +1,108 @@
+---
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props as Props
+
+const navItems = [
+  { title: 'Home', url: '/' },
+  { title: 'About', url: '/about' },
+  { title: 'Activities', url: '/activities' },
+  { title: 'Donate', url: '/donate' },
+]
+
+---
+
+<header>
+  <div>
+    <img src="/img/favicon.png" alt="logo" width="48px" height="48px" />
+    Lions Club of Bangalore Prerana
+  </div>
+  <nav>
+    <ul>
+      {navItems.map(item =>(
+        <li>
+          <a href={item.url}>
+            <div class="title">{item.title}
+            {
+              (title === item.title || title === '' && item.url === '/')
+              && <div class="underline"/>
+            }
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    background-color: var(--color-pri-bg);
+    color: var(--color-pri-fg);
+    position: sticky;
+    top: -3.5rem;
+    z-index: 10;
+  }
+
+  header > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    padding: 0.5rem 1rem 0;
+  }
+
+  img {
+    margin-right: 0.5rem;
+  }
+
+  nav {
+    box-shadow: 0 -6px 0 0 var(--color-pri-bg), 0 2px 8px 0 #000000a0;
+    padding: 0;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    flex-basis: 25%;
+  }
+
+  a {
+    background-color: var(--color-pri-bg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    text-decoration: none;
+    transition: filter 0.3s;
+  }
+
+  a:hover {
+    filter: brightness(125%);
+  }
+
+  a:active {
+    filter: brightness(150%);
+  }
+
+  .title {
+    position: relative;
+  }
+
+  .underline {
+    margin-top: 4px;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+  }
+</style>
