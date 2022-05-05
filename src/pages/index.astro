@@ -6,16 +6,19 @@ import Contribute from 'components/Home/Contribute.astro'
 ---
 
 <BodyLayout title="">
-  <Carousel />
-  <section><About /></section>
-  <section><Contribute /></section>
+  <section><Carousel /></section>
+  <section class="card"><About /></section>
+  <section class="card"><Contribute /></section>
 </BodyLayout>
 
 <style>
   section {
-    margin-bottom: 2rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
   }
-
+  section:first-child {
+    margin-top: 1.25rem;
+  }
   section:last-child {
     margin-bottom: 1rem;
   }
