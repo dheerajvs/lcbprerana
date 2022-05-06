@@ -1,15 +1,15 @@
 ---
-import Button from 'components/ui/Button.astro'
-
 const activities = [
   {
     image: 'img/Abhayashram-fabric_jewelry.jpg',
     caption:
       'Skill development fabric jewellery workshop for children at Vatsalya Abhayasharam',
+    href: '/activities/abhayashram_fabric_jewelry'
   },
   {
     image: 'img/Abhayashram-hunger_relief.jpg',
     caption: 'Hunger-relief for children at Abhayasharam',
+    href: '/activities/abhayashram_hunger_relief'
   },
 ]
 ---
@@ -23,29 +23,31 @@ const activities = [
     <ul class="splide__list">
       {activities.map(activity => (
         <li class="splide__slide">
-          <div class="splide__slide__container card">
+          <a class="splide__slide__container card" href={activity.href}>
             <img src={activity.image} />
             <div class="caption">
               {activity.caption}
             </div>
-          </div>
+          </a>
         </li>
       ))}
     </ul>
   </div>
 </div>
-<div class="center">
-  <Button kind="tertiary" href="/activities">More Stories</Button>
-</div>
+<!-- <div class="center">
+  <Button href="/activities">More Stories</Button>
+</div> -->
 
 <script is:inline src="/js/splide.min.js"></script>
-<script is:inline
-  >new Splide('#home-activities-carousel', {
-    type: 'loop',
-    autoplay: true,
-    interval: 4000,
-  }).mount()</script
->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    new Splide('#home-activities-carousel', {
+      type: 'loop',
+      autoplay: true,
+      interval: 4000,
+    }).mount()
+  });
+</script>
 
 <style>
   img {
@@ -64,10 +66,6 @@ const activities = [
     justify-content: center;
   }
 </style><style is:global>
-  .splide {
-    margin-bottom: 1rem;
-  }
-
   .splide__arrow {
     background: var(--color-sec-bg);
     opacity: 1;
@@ -82,14 +80,29 @@ const activities = [
     filter: brightness(85%);
     opacity: 1;
   }
+  .splide__arrow--prev {
+    left: -0.5rem;
+  }
+  .splide__arrow--next {
+    right: -0.5rem;
+  }
 
   .splide__track {
     margin-bottom: 0.5rem;
   }
 
   .splide__slide__container {
+    display: block;
+    height: calc(100% - 3px);
     margin: 0 3px 3px;
     padding: 0;
+  }
+  .splide__slide__container:hover {
+    filter: brightness(90%);
+    transition: filter 0.2s;
+  }
+  .splide__slide__container:active {
+    filter: brightness(85%);
   }
 
   .splide__pagination {
