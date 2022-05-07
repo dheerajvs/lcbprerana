@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Sowmya B. A.",
+    "title": "President",
+    "photo": "/img/officers/sowmya.jpg"
+  },
+  {
+    "name": "Dr. Shiva Shankar G. N.",
+    "title": "\u2160 Vice President",
+    "photo": "/img/officers/shivashankar.jpg"
+  },
+  {
+    "name": "Deepika Sumal Vasudev",
+    "title": "\u2161 Vice President",
+    "photo": "/img/officers/deepika.jpg"
+  },
+  { "name": "Rajeshwari P Shekar", "title": "Secretary" },
+  { "name": "Swathi P. V. Reddy", "title": "Treasurer" }
+]

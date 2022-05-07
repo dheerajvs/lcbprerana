@@ -1,15 +1,6 @@
 ---
+import officers from 'data/officers.json'
 import PersonIcon from './person.astro'
-
-type Officer = { name: string; title: string, photo?: string }
-
-const officers: Officer[] = [
-  { name: 'Sowmya B. A.', title: 'President', photo: '/img/officers/sowmya.jpg' },
-  { name: 'Dr. Shiva Shankar G. N.', title: '\u2160 Vice President' },
-  { name: 'Deepika Sumal Vasudev', title: '\u2161 Vice President' },
-  { name: 'Rajeshwari P Shekar', title: 'Secretary' },
-  { name: 'Swathi P. V. Reddy', title: 'Treasurer' },
-]
 ---
 
 <h2>Office Bearers</h2>
@@ -19,7 +10,7 @@ const officers: Officer[] = [
       <div class="img-wrapper">
         {
           officer.photo
-            ? <img src={officer.photo} alt="" width="42" height="42"/>
+            ? <img src={officer.photo} alt="" width="56" height="56"/>
             : <PersonIcon />
         }
       </div>
@@ -43,7 +34,7 @@ const officers: Officer[] = [
     align-items: center;
     border-top-left-radius: 3rem;
     border-bottom-left-radius: 3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     padding: 0 0.5rem;
   }
   li:last-child {
@@ -56,8 +47,8 @@ const officers: Officer[] = [
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
   }
 
   .name-plate {
