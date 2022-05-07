@@ -3,17 +3,39 @@ import BodyLayout from 'layouts/BodyLayout.astro'
 ---
 
 <BodyLayout title="About">
-  <p>
-    Lions Club of Bangalore Prerana (District 317-E) is a part of Lions Clubs
-    International, chartered in March 2022 by Lion Sowmya B. A. as its charter
-    president.
-  </p><p>
-    The club was chartered with a team of 21 members who aspire to serve the
-    less fortunate within the local community and to maintain a clean and green
-    environment.
-  </p><p>
-    The focus areas of the team are environment, health, education, empowering
-    women and children with skill-based training programs and care for the aged
-    and disabled.
-  </p>
+  <section>
+    <div class="card">
+      <img src="/img/about.jpg" alt="" />
+      <p>
+        Lions Club of Bangalore Prerana <small>(District 317-E)</small> is a part
+        of Lions Clubs International, chartered in March 2022 by Lion Sowmya B. A.
+        as its charter president.
+      </p><p>
+        The club was chartered with a team of 21 members who aspire to serve the
+        less fortunate within the local community and to maintain a clean and
+        green environment.
+      </p><p>
+        The focus areas of the team are environment, health, education,
+        empowering women and children with skill-based training programs and
+        care for the aged and disabled.
+      </p>
+    </div>
+  </section>
 </BodyLayout>
+
+<style>
+  section {
+    margin: 1rem 0;
+  }
+
+  img {
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    max-width: calc(100% + 2rem);
+    margin: -1rem -1rem 0;
+  }
+
+  small {
+    letter-spacing: 1px;
+  }
+</style>
