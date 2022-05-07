@@ -1,5 +1,7 @@
 ---
 import BodyLayout from 'layouts/BodyLayout.astro'
+import Officers from 'components/About/Officers.astro'
+import Button from 'components/ui/Button.astro'
 ---
 
 <BodyLayout title="About">
@@ -19,13 +21,19 @@ import BodyLayout from 'layouts/BodyLayout.astro'
         empowering women and children with skill-based training programs and
         care for the aged and disabled.
       </p>
+      <Button kind="secondary" href="/contact">Contact us</Button>
     </div>
+  </section>
+  <section>
+    <h2>Office Bearers</h2>
+    <Officers />
   </section>
 </BodyLayout>
 
 <style>
   section {
-    margin: 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1.75rem;
   }
 
   img {

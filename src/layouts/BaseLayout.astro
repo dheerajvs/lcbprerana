@@ -29,10 +29,15 @@ const { title } = Astro.props as Props
   }
 
   h2 {
+    background-image: linear-gradient(var(--color-sec-bg), var(--color-sec-bg));
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: min(68px, 100%) 4px;
     font-size: var(--font-size-lg);
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 1.125rem;
+    padding-bottom: 0.625rem;
   }
 
   a {

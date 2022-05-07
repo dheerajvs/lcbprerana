@@ -1,0 +1,83 @@
+---
+import PersonIcon from './person.astro'
+
+type Officer = { name: string; title: string, photo?: string }
+
+const officers: Officer[] = [
+  { name: 'Sowmya B. A.', title: 'President', photo: '/img/officers/sowmya.jpg' },
+  { name: 'Dr. Shiva Shankar G. N.', title: '\u2160 Vice President' },
+  { name: 'Deepika Sumal Vasudev', title: '\u2161 Vice President' },
+  { name: 'Rajeshwari P Shekar', title: 'Secretary' },
+  { name: 'Swathi P. V. Reddy', title: 'Treasurer' },
+]
+---
+
+<ul>
+  {officers.map(officer => (
+    <li>
+      <div class="card officer">
+        <div class="img-wrapper">
+          {
+            officer.photo
+              ? <img src={officer.photo} alt="" width="58" height="58"/>
+              : <PersonIcon />
+          }
+        </div>
+        <div class="name-plate">
+          <div class="name">{officer.name}</div>
+          <div class="title">{officer.title}</div>
+        </div>
+      </div>
+    </li>
+  ))}
+</ul>
+
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    padding: 0;
+  }
+
+  .img-wrapper {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 58px;
+    height: 58px;
+  }
+
+  .officer {
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+  }
+
+  .name-plate {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: small;
+    text-transform: uppercase;
+  }
+</style>
