@@ -12,21 +12,20 @@ const officers: Officer[] = [
 ]
 ---
 
+<h2>Office Bearers</h2>
 <ul>
   {officers.map(officer => (
     <li>
-      <div class="card officer">
-        <div class="img-wrapper">
-          {
-            officer.photo
-              ? <img src={officer.photo} alt="" width="58" height="58"/>
-              : <PersonIcon />
-          }
-        </div>
-        <div class="name-plate">
-          <div class="name">{officer.name}</div>
-          <div class="title">{officer.title}</div>
-        </div>
+      <div class="img-wrapper">
+        {
+          officer.photo
+            ? <img src={officer.photo} alt="" width="42" height="42"/>
+            : <PersonIcon />
+        }
+      </div>
+      <div class="name-plate">
+        <div class="name">{officer.name}</div>
+        <div class="title">{officer.title}</div>
       </div>
     </li>
   ))}
@@ -40,11 +39,15 @@ const officers: Officer[] = [
   }
 
   li {
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0.5rem;
   }
-
-  .card {
-    padding: 0;
+  li:last-child {
+    margin-bottom: 0;
   }
 
   .img-wrapper {
@@ -53,15 +56,8 @@ const officers: Officer[] = [
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    width: 58px;
-    height: 58px;
-  }
-
-  .officer {
-    display: flex;
-    align-items: center;
-    border-top-left-radius: 3rem;
-    border-bottom-left-radius: 3rem;
+    width: 42px;
+    height: 42px;
   }
 
   .name-plate {
