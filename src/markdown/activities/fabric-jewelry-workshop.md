@@ -1,5 +1,5 @@
 ---
-title: Fabric Jewelry Workshop
+title: Fabric Jewellery Workshop
 date: 2022-04-21
 image: /img/activities/fabric-jewellery-workshop.jpg
 cause: Other

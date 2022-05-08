@@ -1,0 +1,36 @@
+---
+import BodyLayout from 'layouts/BodyLayout.astro'
+import type { Activity } from "types/index.d.ts"
+const activities = await Astro.glob<Activity>('../../markdown/activities/*.md')
+---
+
+<BodyLayout title="Activities">
+{
+  activities.map(({ frontmatter }) => (
+    <article class="card">
+      <img src={frontmatter.image} alt="" />
+      <header>
+        <h2 class="title">{frontmatter.title}</h2>
+        <time datetime={frontmatter.date}>{frontmatter.date}</time>
+      </header>
+      <div>{frontmatter.description}</div>
+    </article>
+  ))
+}
+</BodyLayout>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  img {
+    margin: 0 -1rem;
+  }
+
+  .title {
+    font-weight: 700;
+  }
+</style>

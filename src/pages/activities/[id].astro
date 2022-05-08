@@ -1,0 +1,101 @@
+---
+// import type { MarkdownInstance } from 'astro'
+import slugify from '@sindresorhus/slugify'
+import { stringifyUrl } from 'query-string'
+import { DateTime } from 'luxon'
+import BodyLayout from 'layouts/BodyLayout.astro'
+import type { Activity } from 'types/index.d.ts'
+
+export async function getStaticPaths() {
+  const activities = await Astro.glob<Activity>(
+    '../../markdown/activities/*.md'
+  )
+
+  return activities.map(activity => ({
+    params: { id: slugify(activity.frontmatter.title) },
+    props: { activity },
+  }))
+}
+
+type Props = {
+  // MarkdownInstance<Activity>
+  activity: {
+    frontmatter: Activity
+    [k: string]: any
+  }
+}
+
+const { activity } = Astro.props as Props
+const { Content, frontmatter } = activity
+---
+
+<BodyLayout title={frontmatter.title}>
+  <article>
+    <header class="card">
+      <img src={frontmatter.image} alt="" width="100%" />
+      <h2>{frontmatter.title}</h2>
+      <dl>
+        <div>
+          <dt>Date</dt><dd>
+            <time datetime={frontmatter.date}
+              >{DateTime.fromISO(frontmatter.date)
+                .setLocale('en-IN')
+                .toLocaleString(DateTime.DATE_FULL)}</time
+            >
+          </dd>
+        </div>
+        <div>
+          <dt>Cause</dt>
+          <dd>{frontmatter.cause}</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>
+            <address>{frontmatter.location}</address><a
+              class="map"
+              href={stringifyUrl({
+                url: 'https://www.google.com/maps/search/',
+                query: {
+                  api: 1,
+                  query: frontmatter.location,
+                },
+              })}
+              target="_blank">Locate on map</a
+            >
+          </dd>
+        </div>
+        <div>
+          <dt>People served</dt>
+          <dd>{frontmatter.served}</dd>
+        </div>
+      </dl>
+    </header>
+    <Content />
+  </article>
+</BodyLayout>
+
+<style>
+  dl > div {
+    display: flex;
+    font-size: small;
+    padding-bottom: 0.375rem;
+  }
+  dt {
+    flex-basis: 7ch;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  dt::after {
+    content: ': ';
+  }
+  dd {
+    margin-left: 1ch;
+  }
+  address {
+    font-style: inherit;
+  }
+  a.map {
+    color: blue;
+    text-decoration: underline;
+  }
+</style>

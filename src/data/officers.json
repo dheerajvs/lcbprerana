@@ -15,5 +15,9 @@
     "photo": "/img/officers/deepika.jpg"
   },
   { "name": "Rajeshwari P Shekar", "title": "Secretary" },
-  { "name": "Swathi P. V. Reddy", "title": "Treasurer" }
+  {
+    "name": "Swathi P. V. Reddy",
+    "title": "Treasurer",
+    "photo": "/img/officers/swathi.jpg"
+  }
 ]
