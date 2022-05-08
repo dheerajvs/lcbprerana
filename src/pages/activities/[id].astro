@@ -31,7 +31,7 @@ const { Content, frontmatter } = activity
 
 <BodyLayout title={frontmatter.title}>
   <article>
-    <header class="card">
+    <header>
       <img src={frontmatter.image} alt="" width="100%" />
       <h2>{frontmatter.title}</h2>
       <dl>
@@ -52,7 +52,6 @@ const { Content, frontmatter } = activity
           <dt>Location</dt>
           <dd>
             <address>{frontmatter.location}</address><a
-              class="map"
               href={stringifyUrl({
                 url: 'https://www.google.com/maps/search/',
                 query: {
@@ -65,8 +64,8 @@ const { Content, frontmatter } = activity
           </dd>
         </div>
         <div>
-          <dt>People served</dt>
-          <dd>{frontmatter.served}</dd>
+          <dt>Served</dt>
+          <dd>{frontmatter.served} people</dd>
         </div>
       </dl>
     </header>
@@ -74,7 +73,30 @@ const { Content, frontmatter } = activity
   </article>
 </BodyLayout>
 
-<style>
+<style is:global>
+  img {
+    border-radius: 0.375rem;
+  }
+
+  p:first-of-type:first-letter {
+    color: var(--color-pri-bg);
+    float: left;
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    padding-top: 0.75rem;
+    padding-right: 0.5rem;
+    padding-left: 0.25rem;
+  }
+</style><style>
+  article {
+    margin-top: 1rem;
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+  dl {
+    margin-bottom: 2rem;
+  }
   dl > div {
     display: flex;
     font-size: small;
@@ -93,9 +115,5 @@ const { Content, frontmatter } = activity
   }
   address {
     font-style: inherit;
-  }
-  a.map {
-    color: blue;
-    text-decoration: underline;
   }
 </style>
