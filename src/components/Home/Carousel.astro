@@ -1,5 +1,6 @@
 ---
-import activities from 'data/activities.json'
+import type { Activity } from "types/index.d.ts"
+const activities = await Astro.glob<Activity>('../../markdown/activities/*.md')
 ---
 
 <div
@@ -9,12 +10,12 @@ import activities from 'data/activities.json'
 >
   <div class="splide__track">
     <ul class="splide__list">
-      {activities.map(activity => (
+      {activities.slice(0, 5).map(({ frontmatter, url }) => (
         <li class="splide__slide">
-          <a class="splide__slide__container card" href={activity.href}>
-            <img src={activity.image} alt="" />
+          <a class="splide__slide__container card" href={url}>
+            <img src={frontmatter.image} alt="" />
             <div class="caption">
-              {activity.caption}
+              {frontmatter.description}
             </div>
           </a>
         </li>
@@ -22,9 +23,6 @@ import activities from 'data/activities.json'
     </ul>
   </div>
 </div>
-<!-- <div class="center">
-  <Button href="/activities">More Stories</Button>
-</div> -->
 
 <script is:inline src="/js/splide.min.js"></script>
 <script is:inline>
