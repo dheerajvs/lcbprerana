@@ -14,7 +14,11 @@
     "title": "\u2161 Vice President",
     "photo": "/img/officers/deepika.jpg"
   },
-  { "name": "Rajeshwari P Shekar", "title": "Secretary" },
+  {
+    "name": "Rajeshwari P Shekar",
+    "title": "Secretary",
+    "photo": "/img/officers/rajeshwari.jpg"
+  },
   {
     "name": "Swathi P. V. Reddy",
     "title": "Treasurer",

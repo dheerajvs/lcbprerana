@@ -1,5 +1,5 @@
 ---
-title: Skill Development at Abhayasharam
+title: Skill Development at Abhayashrama
 date: 2022-04-22
 image: /img/activities/skill-development-abhayashrama.jpg
 cause: Other
