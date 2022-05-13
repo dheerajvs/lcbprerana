@@ -2,15 +2,21 @@
 import BodyLayout from 'layouts/BodyLayout.astro'
 import type { Activity } from 'types/index.d.ts'
 
-const activities = (await Astro.glob<Activity>('./*.md')).sort(
-  ({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) =>
-    date1 > date2 ? -1 : date1 < date2 ? 1 : 0
-)
+export async function getStaticPaths({ paginate }) {
+  const activities = (await Astro.glob<Activity>('./*.md')).sort(
+    ({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) =>
+      date1 > date2 ? -1 : date1 < date2 ? 1 : 0
+  )
+
+  return paginate(activities, { pageSize: 10 })
+}
+
+const { page } = Astro.props
 ---
 
 <BodyLayout title="Activities">
 {
-  activities.map(({ frontmatter }) => (
+  page.data.map(({ frontmatter }) => (
     <article class="card">
       <img src={frontmatter.image} alt="" />
       <header>
