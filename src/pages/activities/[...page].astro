@@ -1,4 +1,5 @@
 ---
+import { DateTime } from 'luxon'
 import BodyLayout from 'layouts/BodyLayout.astro'
 import type { Activity } from 'types/index.d.ts'
 
@@ -16,14 +17,22 @@ const { page } = Astro.props
 
 <BodyLayout title="Activities">
 {
-  page.data.map(({ frontmatter }) => (
+  page.data.map(({ frontmatter, url }) => (
     <article class="card">
-      <img src={frontmatter.image} alt="" />
-      <header>
-        <h2 class="title">{frontmatter.title}</h2>
-        <time datetime={frontmatter.date}>{frontmatter.date}</time>
-      </header>
-      <div>{frontmatter.description}</div>
+      <a href={url}>
+        <img class="card-image" src={frontmatter.image} alt="" />
+        <div class="card-content">
+          <header>
+            <div class="title">{frontmatter.title}</div>
+            <time datetime={frontmatter.date}
+              >{DateTime.fromISO(frontmatter.date)
+                .setLocale('en-IN')
+                .toLocaleString(DateTime.DATE_FULL)}</time
+            >
+          </header>
+          <div>{frontmatter.description}</div>
+        </div>
+      </a>
     </article>
   ))
 }
@@ -31,16 +40,35 @@ const { page } = Astro.props
 
 <style>
   article {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  article:hover {
+    filter: brightness(90%);
+    transition: filter 0.2s;
+  }
+  article:active {
+    filter: brightness(85%);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   img {
-    margin: 0 -1rem;
+    display: block;
+  }
+
+  header {
+    margin-bottom: 0.5rem;
   }
 
   .title {
-    font-weight: 700;
+    font-weight: 600;
+  }
+
+  time {
+    font-size: small;
   }
 </style>

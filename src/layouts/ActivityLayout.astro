@@ -1,5 +1,4 @@
 ---
-// import type { MarkdownInstance } from 'astro'
 import { stringifyUrl } from 'query-string'
 import { DateTime } from 'luxon'
 import BodyLayout from 'layouts/BodyLayout.astro'
@@ -52,16 +51,19 @@ const { content } = Astro.props as Props
         </div>
       </dl>
     </header>
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
   </article>
 </BodyLayout>
 
-<style is:global>
-  img {
+<style>
+  img,
+  .content :global(img) {
     border-radius: 0.375rem;
   }
 
-  p:first-of-type:first-letter {
+  .content :global(p:first-of-type:first-letter) {
     color: var(--color-pri-bg);
     float: left;
     font-family: Georgia, serif;
@@ -70,7 +72,7 @@ const { content } = Astro.props as Props
     padding-right: 0.5rem;
     padding-left: 0.25rem;
   }
-</style><style>
+
   article {
     margin-top: 1rem;
   }
