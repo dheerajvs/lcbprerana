@@ -1,7 +1,11 @@
 ---
 import BodyLayout from 'layouts/BodyLayout.astro'
-import type { Activity } from "types/index.d.ts"
-const activities = await Astro.glob<Activity>('../../markdown/activities/*.md')
+import type { Activity } from 'types/index.d.ts'
+
+const activities = (await Astro.glob<Activity>('./*.md')).sort(
+  ({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) =>
+    date1 > date2 ? -1 : date1 < date2 ? 1 : 0
+)
 ---
 
 <BodyLayout title="Activities">

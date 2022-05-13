@@ -1,44 +1,27 @@
 ---
 // import type { MarkdownInstance } from 'astro'
-import slugify from '@sindresorhus/slugify'
 import { stringifyUrl } from 'query-string'
 import { DateTime } from 'luxon'
 import BodyLayout from 'layouts/BodyLayout.astro'
 import type { Activity } from 'types/index.d.ts'
 
-export async function getStaticPaths() {
-  const activities = await Astro.glob<Activity>(
-    '../../markdown/activities/*.md'
-  )
-
-  return activities.map(activity => ({
-    params: { id: slugify(activity.frontmatter.title) },
-    props: { activity },
-  }))
+export interface Props {
+  content: Activity
 }
 
-type Props = {
-  // MarkdownInstance<Activity>
-  activity: {
-    frontmatter: Activity
-    [k: string]: any
-  }
-}
-
-const { activity } = Astro.props as Props
-const { Content, frontmatter } = activity
+const { content } = Astro.props as Props
 ---
 
-<BodyLayout title={frontmatter.title}>
+<BodyLayout title={content.title}>
   <article>
     <header>
-      <img src={frontmatter.image} alt="" width="100%" />
-      <h2>{frontmatter.title}</h2>
+      <img src={content.image} alt="" width="100%" />
+      <h2>{content.title}</h2>
       <dl>
         <div>
           <dt>Date</dt><dd>
-            <time datetime={frontmatter.date}
-              >{DateTime.fromISO(frontmatter.date)
+            <time datetime={content.date}
+              >{DateTime.fromISO(content.date)
                 .setLocale('en-IN')
                 .toLocaleString(DateTime.DATE_FULL)}</time
             >
@@ -46,17 +29,17 @@ const { Content, frontmatter } = activity
         </div>
         <div>
           <dt>Cause</dt>
-          <dd>{frontmatter.cause}</dd>
+          <dd>{content.cause}</dd>
         </div>
         <div>
           <dt>Location</dt>
           <dd>
-            <address>{frontmatter.location}</address><a
+            <address>{content.location}</address><a
               href={stringifyUrl({
                 url: 'https://www.google.com/maps/search/',
                 query: {
                   api: 1,
-                  query: frontmatter.location,
+                  query: content.location,
                 },
               })}
               target="_blank">Locate on map</a
@@ -65,11 +48,11 @@ const { Content, frontmatter } = activity
         </div>
         <div>
           <dt>Served</dt>
-          <dd>{frontmatter.served} people</dd>
+          <dd>{content.served} people</dd>
         </div>
       </dl>
     </header>
-    <Content />
+    <slot />
   </article>
 </BodyLayout>
 

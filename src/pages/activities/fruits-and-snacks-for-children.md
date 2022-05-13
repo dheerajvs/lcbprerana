@@ -1,4 +1,5 @@
 ---
+layout: layouts/ActivityLayout.astro
 title: Fruits and snacks for children
 date: 2022-04-22
 image: /img/activities/fruits-and-snacks-for-children.jpg
