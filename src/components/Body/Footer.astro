@@ -34,10 +34,15 @@
     alt="Lions Clubs International"
     height="32"
   />
-  <small
+  <small class="about-lci"
     >Lions Clubs International is the largest service club organization in the
     world. Our 1.4 million members are serving locally and globally to help take
     on some of the biggest challenges facing humanity.</small
+  >
+  <small class="author"
+    >Website developed by <a href="https://github.com/dheerajvs/lcbprerana"
+      >Dheeraj V. S.</a
+    ></small
   >
 </footer>
 
@@ -46,6 +51,8 @@
     background-color: var(--color-pri-bg);
     box-shadow: 0 -2px 8px rgb(0 0 0 / 63%);
     color: var(--color-pri-fg);
+    display: flex;
+    flex-direction: column;
     padding: 2rem 1.5rem 1.5rem;
   }
 
@@ -76,7 +83,7 @@
     color: var(--color-sec-bg);
   }
 
-  a {
+  li > a {
     border-radius: 2px;
     color: inherit;
     display: block;
@@ -84,16 +91,28 @@
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
   }
-  a:hover {
+  li > a:hover {
     background-color: var(--color-bg);
     color: var(--color-fg);
   }
-  a:active {
+  li > a:active {
     filter: brightness(90%);
   }
 
   .lci-sig {
-    display: block;
+    align-self: flex-start;
+  }
+
+  .about-lci {
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  .author {
+    align-self: center;
+    font-size: x-small;
+  }
+  .author > a {
+    color: inherit;
   }
 </style>
