@@ -14,8 +14,8 @@ const { content } = Astro.props as Props
 <BodyLayout title={content.title}>
   <article>
     <header>
-      <img src={content.image} alt="" width="100%" />
       <h2>{content.title}</h2>
+      <img src={content.image} alt="" width="100%" />
       <dl>
         <div>
           <dt>Date</dt><dd>
@@ -71,10 +71,6 @@ const { content } = Astro.props as Props
     padding-top: 0.75rem;
     padding-right: 0.5rem;
     padding-left: 0.25rem;
-  }
-
-  h2 {
-    margin-top: 1rem;
   }
 
   dl {
