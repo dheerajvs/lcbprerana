@@ -63,16 +63,24 @@
   }
 
   ul {
-    list-style-type: none;
+    list-style-type: '\BB';
     margin: 0;
     padding: 0;
+  }
+
+  li {
+    margin-left: 1.5rem;
+    padding-inline-start: 0.25rem;
+  }
+  li::marker {
+    color: var(--color-sec-bg);
   }
 
   a {
     border-radius: 2px;
     color: inherit;
     display: block;
-    padding: 0.5rem 1.75rem;
+    padding: 0.5rem 0.25rem;
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
   }
