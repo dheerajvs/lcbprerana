@@ -75,7 +75,6 @@ const navItems = [
   }
 
   a {
-    background-color: var(--color-pri-bg);
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     color: inherit;
@@ -84,15 +83,15 @@ const navItems = [
     align-items: center;
     padding: 15px 0;
     text-decoration: none;
-    transition: filter 0.3s;
+    transition: background-color 0.3s;
   }
 
   a:hover {
-    filter: brightness(125%);
+    background-color: hsla(0, 0%, 100%, 0.063);
   }
 
   a:active {
-    filter: brightness(150%);
+    background-color: hsla(0, 0%, 100%, 0.125);
   }
 
   .title {

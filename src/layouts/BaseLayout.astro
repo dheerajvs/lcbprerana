@@ -72,6 +72,13 @@ const { title } = Astro.props as Props
   .underline {
     background-color: var(--color-sec-bg);
   }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--color-sec-bg);
+    box-shadow: 0 0 6px var(--color-sec-bg);
+    outline: 1px solid var(--color-sec-bg);
+  }
 </style><style>
   :root {
     --color-bg: #f5f5f5;

@@ -91,14 +91,13 @@
     display: block;
     padding: 0.5rem 0.25rem;
     text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s;
   }
   li > a:hover {
-    background-color: var(--color-bg);
-    color: var(--color-fg);
+    background-color: hsla(0, 0%, 100%, 0.063);
   }
   li > a:active {
-    filter: brightness(90%);
+    background-color: hsla(0, 0%, 100%, 0.125);
   }
 
   .lci-sig {
