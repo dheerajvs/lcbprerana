@@ -1,15 +1,15 @@
 ---
-import BodyLayout from 'layouts/BodyLayout.astro'
+import BaseLayout from 'layouts/BaseLayout.astro'
 import About from 'components/Home/About.astro'
 import Carousel from 'components/Home/Carousel.astro'
 import Contribute from 'components/Home/Contribute.astro'
 ---
 
-<BodyLayout title="">
+<BaseLayout title="">
   <section><Carousel /></section>
   <section class="card card-content"><About /></section>
   <section class="card card-content"><Contribute /></section>
-</BodyLayout>
+</BaseLayout>
 
 <style>
   section {

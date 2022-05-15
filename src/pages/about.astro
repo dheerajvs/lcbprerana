@@ -1,10 +1,10 @@
 ---
-import BodyLayout from 'layouts/BodyLayout.astro'
+import BaseLayout from 'layouts/BaseLayout.astro'
 import Officers from 'components/About/Officers.astro'
 import Button from 'components/ui/Button.astro'
 ---
 
-<BodyLayout title="About">
+<BaseLayout title="About">
   <section>
     <div class="card">
       <img class="card-image" src="/img/about.jpg" alt="" />
@@ -30,7 +30,7 @@ import Button from 'components/ui/Button.astro'
   <section class="card card-content">
     <Officers />
   </section>
-</BodyLayout>
+</BaseLayout>
 
 <style>
   section {

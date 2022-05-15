@@ -1,6 +1,6 @@
 ---
 import { DateTime } from 'luxon'
-import BodyLayout from 'layouts/BodyLayout.astro'
+import BaseLayout from 'layouts/BaseLayout.astro'
 import type { Activity } from 'types/index.d.ts'
 
 export async function getStaticPaths({ paginate }) {
@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props
 ---
 
-<BodyLayout title="Activities">
+<BaseLayout title="Activities">
 {
   page.data.map(({ frontmatter, url }) => (
     <article class="card">
@@ -36,7 +36,7 @@ const { page } = Astro.props
     </article>
   ))
 }
-</BodyLayout>
+</BaseLayout>
 
 <style>
   article {
