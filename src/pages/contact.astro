@@ -13,6 +13,7 @@ import BaseLayout from 'layouts/BaseLayout.astro'
     <h2>Contact us</h2>
     <div>
       <label for="name">Name:</label><input
+        autocomplete="name"
         id="name"
         name="name"
         required
@@ -21,6 +22,7 @@ import BaseLayout from 'layouts/BaseLayout.astro'
     </div>
     <div>
       <label for="phone">Phone:</label><input
+        autocomplete="tel"
         id="phone"
         name="phone"
         required
@@ -29,7 +31,7 @@ import BaseLayout from 'layouts/BaseLayout.astro'
     </div>
     <div>
       <label for="email">Email: <span class="optional">(optional)</span></label
-      ><input id="email" name="email" type="email" />
+      ><input autocomplete="email" id="email" name="email" type="email" />
     </div>
     <div>
       <label for="message">Message:</label><textarea

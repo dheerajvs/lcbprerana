@@ -1,0 +1,88 @@
+---
+import Links from 'components/Links.astro'
+---
+
+<footer>
+  <div class="wrapper">
+    <div class="links"><Links /></div>
+    <div class="lci-nameplate">
+      <img
+        class="lci-sig"
+        src="/img/lci_sig_white.png"
+        alt="Lions Clubs International"
+        height="32"
+      />
+      <small class="lci-description"
+        >Lions Clubs International is the largest service club organization in
+        the world. Our 1.4 million members are serving locally and globally to
+        help take on some of the biggest challenges facing humanity.</small
+      >
+    </div>
+  </div>
+  <small class="author"
+    >Website developed by <a
+      href="https://github.com/dheerajvs/lcbprerana"
+      rel="noopener noreferrer"
+      target="_blank">Lion Dheeraj V. S.</a
+    ></small
+  >
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-pri-bg);
+    box-shadow: 0 -2px 8px rgb(0 0 0 / 63%);
+    color: var(--color-pri-fg);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .links {
+    margin-bottom: 1.5rem;
+  }
+
+  .lci-sig {
+    display: block;
+  }
+
+  .lci-description {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .author {
+    align-self: center;
+    font-size: x-small;
+  }
+  .author > a {
+    color: inherit;
+  }
+
+  @media screen and (min-width: 641px) {
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+    .links {
+      margin-bottom: 0;
+    }
+    .lci-nameplate {
+      margin-left: 2rem;
+      max-width: 20rem;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .links {
+      display: none;
+    }
+    .lci-nameplate {
+      max-width: inherit;
+    }
+  }
+</style>

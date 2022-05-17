@@ -1,0 +1,26 @@
+---
+import Links from 'components/Links.astro'
+---
+
+<aside class="card">
+  <Links />
+</aside>
+
+<style>
+  aside {
+    display: none;
+  }
+  @media screen and (min-width: 1025px) {
+    aside {
+      align-self: flex-start;
+      display: block;
+      /* margin-top: 6rem; */
+      margin-top: 1.3rem;
+      max-width: 16rem;
+      padding: 1rem;
+      position: sticky;
+      top: 1rem;
+      width: 100%;
+    }
+  }
+</style>

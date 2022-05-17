@@ -14,7 +14,7 @@ const navItems = [
 
 ---
 
-<header>
+<div class="root">
   <div>
     <img src="/img/favicon.png" alt="" width="48" height="48" />
     Lions Club of Bangalore Prerana
@@ -35,18 +35,21 @@ const navItems = [
       ))}
     </ul>
   </nav>
-</header>
+</div>
 
 <style>
-  header {
+  .root {
     background-color: var(--color-pri-bg);
     color: var(--color-pri-fg);
-    position: sticky;
-    top: -3.5rem;
-    z-index: 10;
   }
 
-  header > div {
+  @media screen and (min-width: 901px) {
+    .root {
+      display: none;
+    }
+  }
+
+  .root > div {
     display: flex;
     align-items: center;
     justify-content: center;

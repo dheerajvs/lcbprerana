@@ -1,0 +1,81 @@
+---
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props as Props
+
+const navItems = [
+  { title: 'Home', url: '/' },
+  { title: 'About', url: '/about' },
+  { title: 'Activities', url: '/activities' },
+  { title: 'Contact', url: '/contact' },
+]
+---
+
+<div class="root">
+  <img src="/img/favicon.png" alt="" width="64" height="64" />
+  <nav>
+    <ul>
+      {navItems.map(item => (
+        <li>
+          <a
+            class={title === item.title || (title === '' && item.url === '/')
+              ? 'selected'
+              : ''}
+            href={item.url}>{item.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
+
+<style>
+  .root {
+    display: none;
+  }
+
+  @media screen and (min-width: 901px) {
+    .root {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      position: sticky;
+      top: 0;
+    }
+  }
+
+  img {
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    display: block;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  a.selected, a.selected:hover {
+    background-color: var(--color-sec-bg);
+  }
+
+  a:hover {
+    background-color: hsla(0, 0%, 0%, 0.063);
+  }
+
+  a:active {
+    background-color: hsla(0, 0%, 0%, 0.125);
+  }
+</style>
