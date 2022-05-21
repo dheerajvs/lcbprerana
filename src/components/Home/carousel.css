@@ -1,0 +1,55 @@
+.splide__arrow {
+  background: var(--color-sec-bg);
+  opacity: 1;
+  width: 2rem;
+  height: 2rem;
+}
+
+.splide__arrow:hover:not(:disabled) {
+  filter: brightness(95%);
+  opacity: 1;
+}
+
+.splide__arrow:active:not(:disabled) {
+  filter: brightness(85%);
+  opacity: 1;
+}
+
+.splide__arrow--prev {
+  left: -0.8rem;
+}
+
+.splide__arrow--next {
+  right: -0.8rem;
+}
+
+.splide__track {
+  margin-bottom: 0.5rem;
+}
+
+.splide__slide__container {
+  display: block;
+  height: calc(100% - 3px);
+  margin: 0 3px 3px;
+}
+
+.splide__slide__container:hover {
+  filter: brightness(90%);
+  transition: filter 0.2s;
+}
+
+.splide__slide__container:active {
+  filter: brightness(85%);
+}
+
+.splide__pagination {
+  position: static;
+}
+
+.splide__pagination__page {
+  background: #b9b9b9;
+}
+
+.splide__pagination__page.is-active {
+  background: #3e3e3e;
+}

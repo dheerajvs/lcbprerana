@@ -1,32 +1,32 @@
 ---
-import type { Activity } from "types/index.d.ts"
-const activities = await Astro.glob<Activity>('../../pages/activities/*.md')
+  import '@splidejs/splide/dist/css/splide-core.min.css'
+  import '@splidejs/splide/dist/css/splide.min.css'
+  import './carousel.css'
+  import type { Activity } from "types/index.d.ts"
+  const activities = await Astro.glob<Activity>('../../pages/activities/*.md')
 ---
 
-<div
-  id="home-activities-carousel"
-  class="splide"
-  aria-label="Recent activities"
->
+<div id="home-activities-carousel" class="splide" aria-label="Recent activities">
   <div class="splide__track">
     <ul class="splide__list">
       {activities.slice(0, 5).map(({ frontmatter, url }) => (
-        <li class="splide__slide">
-          <a class="splide__slide__container card" href={url}>
-            <img class="card-image" src={frontmatter.image} alt="" />
-            <div class="caption">
-              {frontmatter.description}
-            </div>
-          </a>
-        </li>
+      <li class="splide__slide">
+        <a class="splide__slide__container card" href={url}>
+          <img class="card-image" src={frontmatter.image} alt="" />
+          <div class="caption">
+            {frontmatter.description}
+          </div>
+        </a>
+      </li>
       ))}
     </ul>
   </div>
 </div>
 
-<script is:inline src="/js/splide.min.js"></script>
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', function() {
+<script>
+  import Splide from "@splidejs/splide"
+
+  document.addEventListener('DOMContentLoaded', function () {
     new Splide('#home-activities-carousel', {
       type: 'loop',
       autoplay: true,
@@ -49,53 +49,5 @@ const activities = await Astro.glob<Activity>('../../pages/activities/*.md')
   .center {
     display: flex;
     justify-content: center;
-  }
-</style><style is:global>
-  .splide__arrow {
-    background: var(--color-sec-bg);
-    opacity: 1;
-    width: 2rem;
-    height: 2rem;
-  }
-  .splide__arrow:hover:not(:disabled) {
-    filter: brightness(95%);
-    opacity: 1;
-  }
-  .splide__arrow:active:not(:disabled) {
-    filter: brightness(85%);
-    opacity: 1;
-  }
-  .splide__arrow--prev {
-    left: -0.8rem;
-  }
-  .splide__arrow--next {
-    right: -0.8rem;
-  }
-
-  .splide__track {
-    margin-bottom: 0.5rem;
-  }
-
-  .splide__slide__container {
-    display: block;
-    height: calc(100% - 3px);
-    margin: 0 3px 3px;
-  }
-  .splide__slide__container:hover {
-    filter: brightness(90%);
-    transition: filter 0.2s;
-  }
-  .splide__slide__container:active {
-    filter: brightness(85%);
-  }
-
-  .splide__pagination {
-    position: static;
-  }
-  .splide__pagination__page {
-    background: #b9b9b9;
-  }
-  .splide__pagination__page.is-active {
-    background: #3e3e3e;
   }
 </style>
