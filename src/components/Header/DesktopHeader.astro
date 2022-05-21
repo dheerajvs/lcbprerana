@@ -1,16 +1,16 @@
 ---
-export interface Props {
-  title: string
-}
+  export interface Props {
+    title: string
+  }
 
-const { title } = Astro.props as Props
+  const { title } = Astro.props as Props
 
-const navItems = [
-  { title: 'Home', url: '/' },
-  { title: 'About', url: '/about' },
-  { title: 'Activities', url: '/activities' },
-  { title: 'Contact', url: '/contact' },
-]
+  const navItems = [
+    { title: 'Home', url: '/' },
+    { title: 'About', url: '/about' },
+    { title: 'Activities', url: '/activities' },
+    { title: 'Contact', url: '/contact' },
+  ]
 ---
 
 <div class="root">
@@ -18,14 +18,10 @@ const navItems = [
   <nav>
     <ul>
       {navItems.map(item => (
-        <li>
-          <a
-            class={title === item.title || (title === '' && item.url === '/')
-              ? 'selected'
-              : ''}
-            href={item.url}>{item.title}
-          </a>
-        </li>
+      <li>
+        <a class={title===item.title || (title==='' && item.url==='/' ) ? 'selected' : '' } href={item.url}>{item.title}
+        </a>
+      </li>
       ))}
     </ul>
   </nav>
@@ -67,7 +63,8 @@ const navItems = [
     transition: background-color 0.3s;
   }
 
-  a.selected, a.selected:hover {
+  a.selected,
+  a.selected:hover {
     background-color: var(--color-sec-bg);
   }
 

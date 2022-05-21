@@ -1,18 +1,18 @@
 ---
-import officers from 'data/officers.json'
+  import officers from 'data/officers.json'
 // import PersonIcon from './person.astro'
 ---
 
 <h2>Office Bearers</h2>
 <ul>
   {officers.map(officer => (
-    <li>
-      <img src={officer.photo} alt="" width="56" height="56"/>
-      <div class="name-plate">
-        <div class="name">{officer.name}</div>
-        <div class="title">{officer.title}</div>
-      </div>
-    </li>
+  <li>
+    <img src={officer.photo} alt="" width="56" height="56" />
+    <div class="name-plate">
+      <div class="name">{officer.name}</div>
+      <div class="title">{officer.title}</div>
+    </div>
+  </li>
   ))}
 </ul>
 
@@ -28,6 +28,7 @@ import officers from 'data/officers.json'
     align-items: center;
     margin-bottom: 1rem;
   }
+
   li:last-child {
     margin-bottom: 0;
   }

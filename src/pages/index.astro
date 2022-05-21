@@ -1,23 +1,31 @@
 ---
-import BaseLayout from 'layouts/BaseLayout.astro'
-import About from 'components/Home/About.astro'
-import Carousel from 'components/Home/Carousel.astro'
-import Contribute from 'components/Home/Contribute.astro'
+  import BaseLayout from 'layouts/BaseLayout.astro'
+  import About from 'components/Home/About.astro'
+  import Carousel from 'components/Home/Carousel.astro'
+  import Contribute from 'components/Home/Contribute.astro'
 ---
 
 <BaseLayout title="">
-  <section><Carousel /></section>
-  <section class="card card-content"><About /></section>
-  <section class="card card-content"><Contribute /></section>
+  <section>
+    <Carousel />
+  </section>
+  <section class="card card-content">
+    <About />
+  </section>
+  <section class="card card-content">
+    <Contribute />
+  </section>
 </BaseLayout>
 
 <style>
   section {
     margin-bottom: 1.75rem;
   }
+
   section:first-child {
     margin-bottom: 1rem;
   }
+
   section:last-child {
     margin-bottom: 1rem;
   }

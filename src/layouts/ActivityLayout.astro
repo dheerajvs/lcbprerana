@@ -1,14 +1,14 @@
 ---
-import { stringifyUrl } from 'query-string'
-import { DateTime } from 'luxon'
-import BaseLayout from 'layouts/BaseLayout.astro'
-import type { Activity } from 'types/index.d.ts'
+  import { stringifyUrl } from 'query-string'
+  import { DateTime } from 'luxon'
+  import BaseLayout from 'layouts/BaseLayout.astro'
+  import type { Activity } from 'types/index.d.ts'
 
-export interface Props {
-  content: Activity
-}
+  export interface Props {
+    content: Activity
+  }
 
-const { content } = Astro.props as Props
+  const { content } = Astro.props as Props
 ---
 
 <BaseLayout title={content.title}>
@@ -18,12 +18,11 @@ const { content } = Astro.props as Props
       <img src={content.image} alt="" width="100%" />
       <dl>
         <div>
-          <dt>Date</dt><dd>
-            <time datetime={content.date}
-              >{DateTime.fromISO(content.date)
-                .setLocale('en-IN')
-                .toLocaleString(DateTime.DATE_FULL)}</time
-            >
+          <dt>Date</dt>
+          <dd>
+            <time datetime={content.date}>{DateTime.fromISO(content.date)
+              .setLocale('en-IN')
+              .toLocaleString(DateTime.DATE_FULL)}</time>
           </dd>
         </div>
         <div>
@@ -33,16 +32,8 @@ const { content } = Astro.props as Props
         <div>
           <dt>Location</dt>
           <dd>
-            <address>{content.location}</address><a
-              href={stringifyUrl({
-                url: 'https://www.google.com/maps/search/',
-                query: {
-                  api: 1,
-                  query: content.location,
-                },
-              })}
-              target="_blank">Locate on map</a
-            >
+            <address>{content.location}</address><a href={stringifyUrl({ url: 'https://www.google.com/maps/search/' ,
+              query: { api: 1, query: content.location, }, })} target="_blank">Locate on map</a>
           </dd>
         </div>
         <div>
@@ -76,22 +67,27 @@ const { content } = Astro.props as Props
   dl {
     margin-bottom: 2rem;
   }
-  dl > div {
+
+  dl>div {
     display: flex;
     font-size: small;
     padding-bottom: 0.375rem;
   }
+
   dt {
     flex-basis: 7ch;
     flex-shrink: 0;
     text-align: right;
   }
+
   dt::after {
     content: ': ';
   }
+
   dd {
     margin-left: 1ch;
   }
+
   address {
     font-style: inherit;
   }
