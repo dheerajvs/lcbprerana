@@ -1,7 +1,7 @@
 ---
   import { DateTime } from 'luxon'
   import BaseLayout from 'layouts/BaseLayout.astro'
-  import type { Activity } from 'types/index.d.ts'
+  import type { Activity, ActivityPageProps } from 'types/index.d.ts'
 
   export async function getStaticPaths({ paginate }) {
     const sorter = (
@@ -14,14 +14,14 @@
     return paginate(activities.sort(sorter), { pageSize: 10 })
   }
 
-  const { page } = Astro.props
+  const { page } = Astro.props as ActivityPageProps
 ---
 
 <BaseLayout title="Activities">
   {
   page.data.map(({ frontmatter, url }) => (
   <article class="card">
-    <a href={url}>
+    <a href={ url.endsWith('/') ? url : url + '/' }>
       <img class="card-image" src={frontmatter.image} alt="" />
       <div class="card-content">
         <header>
