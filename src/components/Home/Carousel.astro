@@ -11,7 +11,7 @@
     <ul class="splide__list">
       {activities.slice(0, 5).map(({ frontmatter, url }) => (
       <li class="splide__slide">
-        <a class="splide__slide__container card" href={url}>
+        <a class="splide__slide__container card" href={ url.endsWith('/') ? url : url + '/' }>
           <img class="card-image" src={frontmatter.image} alt="" />
           <div class="caption">
             {frontmatter.description}
