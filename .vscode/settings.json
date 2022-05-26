@@ -22,5 +22,11 @@
   },
   "editor.formatOnSave": true,
   "editor.rulers": [80],
+  "json.schemas": [
+    {
+      "fileMatch": ["/public/site.webmanifest"],
+      "url": "https://json.schemastore.org/web-manifest-combined.json"
+    }
+  ],
   "prettier.prettierPath": "./node_modules/prettier"
 }
