@@ -15,7 +15,7 @@
 ---
 
 <div class="root">
-  <div>
+  <div class="banner">
     <img src="/favicon.svg" alt="" width="48" height="48" />
     Lions Club of Bangalore Prerana
   </div>
@@ -50,12 +50,18 @@
     }
   }
 
-  .root>div {
+  .banner {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
     padding: 0.5rem 1rem 0;
+  }
+
+  @media screen and (display-mode: minimal-ui) {
+    .banner {
+      display: none;
+    }
   }
 
   img {
