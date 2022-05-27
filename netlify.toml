@@ -1,3 +1,65 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# See: https://answers.netlify.com/t/setting-response-headers-only-on-documents/6144/37
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    cache-control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    cache-control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/*.webmanifest"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/about/"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/activities/*"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/contact/"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+
+[[headers]]
+  for = "/success/"
+  [headers.values]
+    cache-control = "public, max-age=3600, stale-while-revalidate=43200"

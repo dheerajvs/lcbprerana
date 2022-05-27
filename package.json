@@ -6,7 +6,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "postbuild": "cp src/_headers dist",
     "preview": "astro preview",
     "check": "astro check"
   },
