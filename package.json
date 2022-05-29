@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Website of Lions Club of Bangalore Prerana",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "start": "astro dev --experimental-integrations",
+    "build": "astro build --experimental-integrations",
     "preview": "astro preview",
     "check": "astro check"
   },
@@ -21,7 +20,8 @@
   "homepage": "lcbprerana.org",
   "devDependencies": {
     "@sindresorhus/slugify": "2.1.0",
-    "astro": "1.0.0-beta.31",
+    "astro": "1.0.0-beta.36",
+    "astro-imagetools": "0.6.9",
     "luxon": "2.4.0",
     "prettier": "2.6.2",
     "prettier-plugin-astro": "0.0.12",

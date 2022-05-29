@@ -3,6 +3,8 @@
   import '@splidejs/splide/dist/css/splide.min.css'
   import './carousel.css'
   import type { Activity } from "types/index.d.ts"
+  import { Img } from 'astro-imagetools/components'
+
   const activities = await Astro.glob<Activity>('../../pages/activities/*.md')
 ---
 
@@ -12,7 +14,7 @@
       {activities.slice(0, 5).map(({ frontmatter, url }) => (
       <li class="splide__slide">
         <a class="splide__slide__container card" href={ url.endsWith('/') ? url : url + '/' }>
-          <img class="card-image" src={frontmatter.image} alt="" />
+          <Img src={frontmatter.image} alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
           <div class="caption">
             {frontmatter.description}
           </div>

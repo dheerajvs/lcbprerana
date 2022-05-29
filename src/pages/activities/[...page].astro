@@ -1,4 +1,5 @@
 ---
+  import { Img } from 'astro-imagetools/components'
   import { DateTime } from 'luxon'
   import BaseLayout from 'layouts/BaseLayout.astro'
   import type { Activity, ActivityPageProps } from 'types/index.d.ts'
@@ -22,7 +23,7 @@
   page.data.map(({ frontmatter, url }) => (
   <article class="card">
     <a href={ url.endsWith('/') ? url : url + '/' }>
-      <img class="card-image" src={frontmatter.image} alt="" />
+      <Img src={frontmatter.image} alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
       <div class="card-content">
         <header>
           <div class="title">{frontmatter.title}</div>

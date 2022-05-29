@@ -1,4 +1,5 @@
 ---
+  import { Img } from 'astro-imagetools/components'
   import BaseLayout from 'layouts/BaseLayout.astro'
   import Officers from 'components/About/Officers.astro'
   import Button from 'components/ui/Button.astro'
@@ -7,7 +8,7 @@
 <BaseLayout title="About">
   <section>
     <div class="card">
-      <img class="card-image" src="/img/about.jpg" alt="" />
+      <Img src="/img/about.jpg" alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
       <div class="card-content">
         <p>
           Lions Club of Bangalore Prerana <small>(District 317-E)</small> is a part
