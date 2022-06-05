@@ -30,3 +30,17 @@
     margin-bottom: 1rem;
   }
 </style>
+
+<script>
+  import("https://identity.netlify.com/v1/netlify-identity-widget.js").then(() => {
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            window.location.href = "/admin/"
+          })
+        }
+      })
+    }
+  })
+</script>
