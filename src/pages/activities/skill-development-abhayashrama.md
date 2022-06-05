@@ -2,7 +2,7 @@
 layout: layouts/ActivityLayout.astro
 title: Skill Development at Abhayashrama
 date: 2022-04-22
-image: /img/activities/skill-development-abhayashrama.jpg
+image: /uploads/skill-development-abhayashrama.jpg
 cause: Other
 location: Abhayashrama, 8th Main Rd, Vinayaka Nagar, Wilson Garden, Bangalore - 560027
 served: 28

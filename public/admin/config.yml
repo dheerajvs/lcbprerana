@@ -8,7 +8,7 @@ collections:
     folder: 'src/pages/activities'
     create: true
     slug: '{{slug}}'
-    summary: '{{date}}: {{title}}'
+    summary: '{{date | date()}}: {{title}}'
     view_groups:
       - label: Cause
         field: cause
@@ -73,5 +73,7 @@ collections:
             ],
           editor_components: ['image'],
         }
-media_folder: 'public/img'
-public_folder: 'public'
+media_folder: 'uploads'
+public_folder: '/uploads'
+site_url: https://www.lcbprerana.org/
+logo_url: https://www.lcbprerana.org/favicon.svg

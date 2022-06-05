@@ -2,7 +2,7 @@
 layout: layouts/ActivityLayout.astro
 title: Fabric Jewellery Workshop
 date: 2022-04-21
-image: /img/activities/fabric-jewellery-workshop.jpg
+image: /uploads/fabric-jewellery-workshop.jpg
 cause: Other
 location: Abhayashrama, 8th Main Rd, Vinayaka Nagar, Wilson Garden, Bangalore - 560027
 served: 28
