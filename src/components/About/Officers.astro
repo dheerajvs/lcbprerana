@@ -1,4 +1,5 @@
 ---
+  import { Img } from 'astro-imagetools/components'
   import officers from 'data/officers.json'
 // import PersonIcon from './person.astro'
 ---
@@ -7,7 +8,8 @@
 <ul>
   {officers.map(officer => (
   <li>
-    <img src={officer.photo} alt="" width="56" height="56" />
+    <Img src={officer.photo} alt="" breakpoints={[180]} placeholder="none" attributes={ { img: {
+      style: 'border-radius: 50%; width: 56px; height: 56px;' } } } />
     <div class="name-plate">
       <div class="name">{officer.name}</div>
       <div class="title">{officer.title}</div>
@@ -31,10 +33,6 @@
 
   li:last-child {
     margin-bottom: 0;
-  }
-
-  img {
-    border-radius: 50%;
   }
 
   .name-plate {

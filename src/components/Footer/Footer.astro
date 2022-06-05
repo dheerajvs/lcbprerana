@@ -1,4 +1,5 @@
 ---
+  import { Img } from 'astro-imagetools/components'
   import Links from 'components/Links.astro'
 ---
 
@@ -8,13 +9,14 @@
       <Links />
     </div>
     <div class="lci-nameplate">
-      <img class="lci-sig" src="/img/lci_sig_white.png" alt="Lions Clubs International" height="32" />
-      <small class="lci-description">Lions Clubs International is the largest service club organization in
-        the world. Our 1.4 million members are serving locally and globally to
+      <Img src="/src/images/lci_sig_white.png" alt="Lions Clubs International" breakpoints={[570]} placeholder="none"
+        attributes={ { img: { style: 'display: block; width: 190px;' } } } />
+      <small class="lci-description">Lions Clubs International is the largest service club organisation in
+        the world. Our 14 lakh members are serving locally and globally to
         help take on some of the biggest challenges facing humanity.</small>
     </div>
   </div>
-  <small class="author">Website developed by <a href="https://github.com/dheerajvs/lcbprerana" rel="noopener noreferrer"
+  <small class="author">Website developed by <a href="https://github.com/dheerajvs/lcbprerana" rel="noopener"
       target="_blank">Lion Dheeraj V. S.</a></small>
 </footer>
 
@@ -34,10 +36,6 @@
 
   .links {
     margin-bottom: 1.5rem;
-  }
-
-  .lci-sig {
-    display: block;
   }
 
   .lci-description {

@@ -8,7 +8,7 @@ collections:
     folder: 'src/pages/activities'
     create: true
     slug: '{{slug}}'
-    summary: '{{date | date()}}: {{title}}'
+    summary: '{{date | date("MMMM DD, YYYY")}}: {{title}}'
     view_groups:
       - label: Cause
         field: cause
@@ -24,7 +24,7 @@ collections:
           label: 'Date',
           name: 'date',
           widget: 'datetime',
-          date_format: true,
+          date_format: 'MMMM DD, YYYY',
           time_format: false,
           picker_utc: true,
         }
@@ -76,4 +76,3 @@ collections:
 media_folder: 'uploads'
 public_folder: '/uploads'
 site_url: https://www.lcbprerana.org/
-logo_url: https://www.lcbprerana.org/favicon.svg
