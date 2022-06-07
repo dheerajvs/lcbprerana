@@ -5,13 +5,15 @@ collections:
   - name: activities
     label: Activities
     label_singular: Activity
-    folder: 'src/pages/activities'
     create: true
+    folder: 'src/pages/activities'
+    preview_path: 'activities/{{slug}}'
     slug: '{{slug}}'
-    summary: '{{date | date("MMMM DD, YYYY")}}: {{title}}'
+    summary: "{{title}} - {{date | date('MMMM DD, YYYY')}} by {{commit_author}}"
+    sortable_fields: ['date', 'commit_date', 'title']
     view_groups:
-      - label: Cause
-        field: cause
+      - label: Cause and Project Type
+        field: causeAndProjectType
     fields:
       - {
           label: 'Layout',
@@ -31,6 +33,7 @@ collections:
           label: 'Date',
           name: 'date',
           widget: 'datetime',
+          format: 'YYYY-MM-DD',
           date_format: 'MMMM DD, YYYY',
           time_format: false,
           picker_utc: true,
