@@ -3,7 +3,7 @@ layout: layouts/ActivityLayout.astro
 title: Fabric Jewellery Workshop
 date: 2022-04-21
 image: /uploads/fabric-jewellery-workshop.jpg
-cause: Other
+causeAndProjectType: 'Other: Education, Literacy or Reading Action Program'
 location: Abhayashrama, 8th Main Rd, Vinayaka Nagar, Wilson Garden, Bangalore - 560027
 served: 28
 description: Fabric jewellery workshop for children at Vatsalya Abhayashrama

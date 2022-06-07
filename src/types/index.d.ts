@@ -6,7 +6,7 @@ export type Activity = {
   title: string
   date: string
   image: string
-  cause: string
+  causeAndProjectType: string
   location: string
   served: number
   description: string
