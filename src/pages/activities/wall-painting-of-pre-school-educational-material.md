@@ -13,19 +13,13 @@ Lions Club of Bangalore Prerana has adopted Ragigudda Slum-1 anganwadi with an i
 
 Children can view the educational material on the walls as they play. 
 
-English alphabets (Capital letter and small letter), 
-
-Kannada alphabets, 
-
- English and kannada 1-10 numbers,
-
-Primary and secondary colors, 
-
-Basic shapes, 
-
-Domestic and wild animals, 
-
-Fruits and vegetables are painted for easy learning 
+* English alphabets (Capital letter and small letter), 
+* Kannada alphabets, 
+*  English and kannada 1-10 numbers,
+* Primary and secondary colors, 
+* Basic shapes, 
+* Domestic and wild animals, 
+* Fruits and vegetables are painted for easy learning 
 
 ![Pre-School Education](/uploads/img_20220529_160942_2-1-.jpg "Pre-School Education")
 
