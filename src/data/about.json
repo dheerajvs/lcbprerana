@@ -1,1 +1,31 @@
-{}
+{
+  "image": "/uploads/about.jpg",
+  "about": "Lions Club of Bangalore Prerana *(District 317-E)* is a part of Lions Clubs International, chartered in March 2022 by Lion Sowmya B. A. as its charter president.\n\nThe club was chartered with a team of 21 members who aspire to serve the less fortunate within the local community and to maintain a clean and green environment.\n\nThe focus areas of the team are environment, health, education, empowering women and children with skill-based training programs and care for the aged and disabled.",
+  "officers": [
+    {
+      "name": "Lion Sowmya B. A.",
+      "title": "President",
+      "photo": "/uploads/member-sowmya.jpg"
+    },
+    {
+      "name": "Lion Dr. Shiva Shankar G. N.",
+      "title": "Ⅰ Vice President",
+      "photo": "/uploads/member-shivashankar.jpg"
+    },
+    {
+      "name": "Lion Deepika Sumal Vasudev",
+      "title": "Ⅱ Vice President",
+      "photo": "/uploads/member-deepika.jpg"
+    },
+    {
+      "name": "Lion Rajeshwari P Shekar",
+      "title": "Secretary",
+      "photo": "/uploads/member-rajeshwari.jpg"
+    },
+    {
+      "name": "Lion Swathi P. V. Reddy",
+      "title": "Treasurer",
+      "photo": "/uploads/member-swathi.jpg"
+    }
+  ]
+}
