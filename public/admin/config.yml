@@ -2,6 +2,22 @@ backend:
   name: git-gateway
   branch: main
 collections:
+  - label: 'Pages'
+    name: 'pages'
+    files:
+      - label: 'About Page'
+        name: 'about'
+        file: 'src/data/about.json'
+        fields:
+          - { label: Image, name: image, widget: image }
+          - { label: About the club, name: about, widget: markdown }
+          - label: Officers
+            name: officers
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Photo, name: photo, widget: image }
   - name: activities
     label: Activities
     label_singular: Activity
@@ -36,7 +52,7 @@ collections:
           format: 'YYYY-MM-DD',
           date_format: 'MMMM DD, YYYY',
           time_format: false,
-          picker_utc: true,
+          picker_utc: false,
         }
       - {
           label: 'Cause and Project Type',
