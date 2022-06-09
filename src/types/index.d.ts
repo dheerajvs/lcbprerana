@@ -2,6 +2,16 @@
 // is failing the build. So import it here.
 import type { Page, MarkdownInstance } from 'astro'
 
+export type About = {
+  image: string
+  about: string
+  officers: {
+    name: string
+    title: string
+    photo: string
+  }[]
+}
+
 export type Activity = {
   title: string
   date: string

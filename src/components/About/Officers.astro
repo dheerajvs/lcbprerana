@@ -1,7 +1,13 @@
 ---
-  import { Img } from 'astro-imagetools/components'
-  import officers from 'data/officers.json'
-// import PersonIcon from './person.astro'
+import { Img } from 'astro-imagetools/components'
+// @ts-expect-error
+import type { About } from 'types/index.d.ts'
+
+export interface Props {
+  officers: About.officers
+}
+
+const { officers } = Astro.props as Props
 ---
 
 <h2>Office Bearers</h2>

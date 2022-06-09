@@ -1,37 +1,29 @@
 ---
-  import { Img } from 'astro-imagetools/components'
-  import BaseLayout from 'layouts/BaseLayout.astro'
-  import Officers from 'components/About/Officers.astro'
-  import Button from 'components/ui/Button.astro'
+import { Markdown } from 'astro/components'
+import { Img } from 'astro-imagetools/components'
+import BaseLayout from 'layouts/BaseLayout.astro'
+import Officers from 'components/About/Officers.astro'
+import Button from 'components/ui/Button.astro'
+import about from 'data/about.json'
+// @ts-expect-error
+import type { About } from 'types/index.d.ts'
+
+const data: About = about
 ---
 
 <BaseLayout title="About">
   <section>
     <div class="card">
-      <Img src="/uploads/about.jpg" alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
+      <Img src={data.image} alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
       <div class="card-content">
-        <p>
-          Lions Club of Bangalore Prerana <small>(District 317-E)</small> is a part
-          of Lions Clubs International, chartered in March 2022 by Lion Sowmya B.
-          A. as its charter president.
-        </p>
-        <p>
-          The club was chartered with a team of 21 members who aspire to serve
-          the less fortunate within the local community and to maintain a clean
-          and green environment.
-        </p>
-        <p>
-          The focus areas of the team are environment, health, education,
-          empowering women and children with skill-based training programs and
-          care for the aged and disabled.
-        </p>
+        <Markdown content={data.about} />
         <Button kind="secondary" href="/contact/">Contact us</Button>
       </div>
     </div>
   </section>
 
   <section class="card card-content">
-    <Officers />
+    <Officers officers={data.officers} />
   </section>
 </BaseLayout>
 
