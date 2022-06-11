@@ -1,17 +1,25 @@
 ---
-  import '@splidejs/splide/dist/css/splide-core.min.css'
-  import '@splidejs/splide/dist/css/splide.min.css'
-  import './carousel.css'
-  import type { Activity } from "types/index.d.ts"
-  import { Img } from 'astro-imagetools/components'
+import '@splidejs/splide/dist/css/splide-core.min.css'
+import '@splidejs/splide/dist/css/splide.min.css'
+import './carousel.css'
+import { Img } from 'astro-imagetools/components'
+// @ts-expect-error
+import type { Activity } from "types/index.d.ts"
 
-  const activities = await Astro.glob<Activity>('../../pages/activities/*.md')
+const chronologicalSort = (
+  { frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }
+) => date1 > date2 ? -1 : date1 < date2 ? 1 : 0
+
+const activities = (await Astro.glob<Activity>('../../pages/activities/*.md'))
+  .slice(0, 5)
+  .sort(chronologicalSort)
+
 ---
 
 <div id="home-activities-carousel" class="splide" aria-label="Recent activities">
   <div class="splide__track">
     <ul class="splide__list">
-      {activities.slice(0, 5).map(({ frontmatter, url }) => (
+      {activities.map(({ frontmatter, url }) => (
       <li class="splide__slide">
         <a class="splide__slide__container card" href={ url.endsWith('/') ? url : url + '/' }>
           <Img src={frontmatter.image} alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
