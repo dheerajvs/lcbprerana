@@ -2,6 +2,7 @@
   "name": "lcbprerana",
   "version": "1.0.0",
   "description": "Website of Lions Club of Bangalore Prerana",
+  "homepage": "https://www.lcbprerana.org/",
   "scripts": {
     "start": "astro dev --experimental-integrations",
     "build": "astro build --experimental-integrations",
@@ -17,9 +18,7 @@
   "bugs": {
     "url": "https://github.com/dheerajvs/lcbprerana/issues"
   },
-  "homepage": "lcbprerana.org",
   "devDependencies": {
-    "@sindresorhus/slugify": "2.1.0",
     "astro": "1.0.0-beta.44",
     "astro-imagetools": "0.6.10",
     "luxon": "2.4.0",
