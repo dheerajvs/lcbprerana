@@ -23,6 +23,14 @@ const srcset = img.match(/srcset="(.*)"/)[1]
 const width = img.match(/width="(.*)"/)[1]
 const height = img.match(/height="(.*)"/)[1]
 
+const { coordinates } = JSON.parse(content.geo || '{}')
+const mapQuery = coordinates ? reverseCoordinates(coordinates) : content.address
+
+function reverseCoordinates(c: [number, number]) {
+  // Google expects [lat, lng], whereas the Map widget of NetlifyCMS returns [lng, lat]
+  return [c[1], c[0]].join()
+}
+
 ---
 
 <BaseLayout title={content.title}>
@@ -59,9 +67,7 @@ const height = img.match(/height="(.*)"/)[1]
           <dt>Address</dt>
           <dd>
             <address>{content.address}</address><a href={stringifyUrl({ url: 'https://www.google.com/maps/search/' ,
-              query: { api: 1, query: content.geo?.coordinates.join() || content.address } } )} target="_blank">Locate
-              on
-              map</a>
+              query: { api: 1, query: mapQuery } } )} target="_blank">Locate on map</a>
           </dd>
         </div>
         <div>

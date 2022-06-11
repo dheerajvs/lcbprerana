@@ -17,7 +17,8 @@ export type Activity = {
   date: string
   image: string
   causeAndProjectType: string
-  location: string
+  address: string
+  geo?: string
   served: number
   description: string
 }
