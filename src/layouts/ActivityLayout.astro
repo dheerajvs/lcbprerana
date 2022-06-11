@@ -1,8 +1,10 @@
 ---
 import { Img } from 'astro-imagetools/components'
+import { renderImg } from "astro-imagetools/api";
 import { stringifyUrl } from 'query-string'
 import { DateTime } from 'luxon'
 import BaseLayout from 'layouts/BaseLayout.astro'
+// @ts-expect-error
 import type { Activity } from 'types/index.d.ts'
 
 export interface Props {
@@ -14,9 +16,28 @@ const { content } = Astro.props as Props
 const cause = content.causeAndProjectType.substring(
   0, content.causeAndProjectType.indexOf(':')
 )
+
+const format = 'jpeg'
+const { img } = await renderImg({ src: content.image, alt: "", format })
+const srcset = img.match(/srcset="(.*)"/)[1]
+const width = img.match(/width="(.*)"/)[1]
+const height = img.match(/height="(.*)"/)[1]
+
 ---
 
 <BaseLayout title={content.title}>
+  <Fragment slot="head">
+    <meta property="og:title" content={content.title} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={content.url} />
+    <meta property="og:image" content={srcset} />
+    <meta property="og:image:type" content={'image/' + format} />
+    <meta property="og:image:alt" content=" " />
+    <meta property="og:image:width" content={width} />
+    <meta property="og:image:height" content={height} />
+    <meta property="og:description" content={content.description} />
+    <meta property="og:site_name" content="Lions Club of Bangalore Prerana" />
+  </Fragment>
   <article>
     <header>
       <h2>{content.title}</h2>

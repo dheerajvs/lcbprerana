@@ -1,11 +1,23 @@
 ---
-  import BaseLayout from 'layouts/BaseLayout.astro'
-  import About from 'components/Home/About.astro'
-  import Carousel from 'components/Home/Carousel.astro'
-  import Contribute from 'components/Home/Contribute.astro'
+import BaseLayout from 'layouts/BaseLayout.astro'
+import About from 'components/Home/About.astro'
+import Carousel from 'components/Home/Carousel.astro'
+import Contribute from 'components/Home/Contribute.astro'
 ---
 
 <BaseLayout title="">
+  <Fragment slot="head">
+    <meta property="og:title" content="Lions Club of Bangalore Prerana" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.lcbprerana.org/" />
+    <meta property="og:image" content="https://www.lcbprerana.org/favicon-512.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Lions Club logo" />
+    <meta property="og:description"
+      content="Lions Club of Bangalore Prerana is a part of Lions Clubs International, chartered in March 2022." />
+  </Fragment>
   <section>
     <Carousel />
   </section>
