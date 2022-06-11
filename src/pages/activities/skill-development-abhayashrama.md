@@ -4,7 +4,7 @@ title: Skill Development at Abhayashrama
 date: 2022-04-22
 image: /uploads/skill-development-abhayashrama.jpg
 causeAndProjectType: 'Other: Education, Literacy or Reading Action Program'
-location: Abhayashrama, 8th Main Rd, Vinayaka Nagar, Wilson Garden, Bangalore - 560027
+address: Abhayashrama, 8th Main Rd, Vinayaka Nagar, Wilson Garden, Bangalore - 560027
 served: 28
 description: Skill development workshop for children at Vatsalya Abhayashrama
 ---

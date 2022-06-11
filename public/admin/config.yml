@@ -89,7 +89,8 @@ collections:
               'Other: Other Service Activity',
             ],
         }
-      - { label: 'Location', name: 'location', widget: 'string' }
+      - { label: 'Address', name: 'address', widget: 'string' }
+      - { label: 'Location', name: 'geo', required: false, widget: 'map' }
       - {
           label: 'Number of people served',
           name: 'served',

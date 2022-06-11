@@ -6,10 +6,10 @@ description: "Skill Development: Fabric jewelry making workshop for children at
   Vatsalya Abhayashrama"
 date: 2022-04-21
 causeAndProjectType: "Other: Education, Literacy or Reading Action Program"
-location: Abhayashrama, 8th Main Rd, Vinayaka Nagar, Wilson Garden, Bangalore - 560027
+address: Abhayashrama, 8th Main Rd, Vinayaka Nagar, Wilson Garden, Bangalore - 560027
 served: 28
 ---
-Fabric jewelry making workshop was conducted for the children at Vatsalya Abhayashrama. A total of 28 children participated in this workshop. 
+Fabric jewelry making workshop was conducted for the children at Vatsalya Abhayashrama. A total of 28 children participated in this workshop.
 
 
 
@@ -17,7 +17,7 @@ Fabric jewelry making workshop was conducted for the children at Vatsalya Abhaya
 
 ![floral_necklace](/uploads/img-20220421-wa0008~2.jpg "Floral Necklace")
 
-The children were given a briefing about 
+The children were given a briefing about
 
 * Various forms of handmade jewelry
 * Why fabric jewelry is chosen for the workshop?

@@ -56,10 +56,12 @@ const height = img.match(/height="(.*)"/)[1]
           <dd>{cause}</dd>
         </div>
         <div>
-          <dt>Location</dt>
+          <dt>Address</dt>
           <dd>
-            <address>{content.location}</address><a href={stringifyUrl({ url: 'https://www.google.com/maps/search/' ,
-              query: { api: 1, query: content.location, }, })} target="_blank">Locate on map</a>
+            <address>{content.address}</address><a href={stringifyUrl({ url: 'https://www.google.com/maps/search/' ,
+              query: { api: 1, query: content.geo?.coordinates.join() || content.address } } )} target="_blank">Locate
+              on
+              map</a>
           </dd>
         </div>
         <div>
