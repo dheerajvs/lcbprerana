@@ -15,16 +15,6 @@
     cache-control = "public, max-age=31536000"
 
 [[headers]]
-  for = "/*.jpeg"
-  [headers.values]
-    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
-
-[[headers]]
-  for = "/*.jpg"
-  [headers.values]
-    cache-control = "public, max-age=3600, stale-while-revalidate=43200"
-
-[[headers]]
   for = "/*.png"
   [headers.values]
     cache-control = "public, max-age=3600, stale-while-revalidate=43200"
@@ -33,11 +23,13 @@
   for = "/*.svg"
   [headers.values]
     cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+    content-type = "image/svg+xml; charset=UTF-8"
 
 [[headers]]
-  for = "/*.webmanifest"
+  for = "/site.webmanifest"
   [headers.values]
     cache-control = "public, max-age=3600, stale-while-revalidate=43200"
+    content-type = "application/manifest+json; charset=UTF-8"
 
 [[headers]]
   for = "/"

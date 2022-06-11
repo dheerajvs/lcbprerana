@@ -6,7 +6,7 @@
     "start": "astro dev --experimental-integrations",
     "build": "astro build --experimental-integrations",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check --experimental-integrations"
   },
   "repository": {
     "type": "git",
