@@ -31,10 +31,10 @@ We planted totally 33 saplings:
 * 2 Papaya saplings
 * 1 Neem sapling
 
-  ![Planting of saplings](/uploads/img_20220615_124515.jpg "Planting of saplings")
+![Planting of saplings](/uploads/img_20220615_124515.jpg "Planting of saplings")
 
-  ![Planting of saplings](/uploads/img_20220615_121919_2.jpg "Planting of saplings")
+![Planting of saplings](/uploads/img_20220615_121919_2.jpg "Planting of saplings")
 
-  ![Planting of saplings](/uploads/img_20220615_114538_2.jpg "Planting of saplings")
+![Planting of saplings](/uploads/img_20220615_114538_2.jpg "Planting of saplings")
 
-  ![Planting of saplings](/uploads/img_20220615_114014_2.jpg "Planting of saplings")
+![Planting of saplings](/uploads/img_20220615_114014_2.jpg "Planting of saplings")
