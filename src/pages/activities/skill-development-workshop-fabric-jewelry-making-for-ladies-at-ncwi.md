@@ -1,7 +1,7 @@
 ---
 layout: layouts/ActivityLayout.astro
 title: Skill Development Workshop - Fabric Jewelry making for ladies at NCWI
-image: /uploads/img_20220623_133039_2.jpg
+image: /uploads/img_20220623_135954_2.jpg
 description: Skill Development Workshop - Fabric Jewelry making for ladies at NCWI
 date: 2022-06-23
 causeAndProjectType: "Other: Education, Literacy or Reading Action Program"
@@ -22,6 +22,6 @@ At the end of the workshop the ladies were issued a workshop participation certi
 
 ![Participation certificate](/uploads/img_20220623_140730_2.jpg "Participation certificate")
 
-![Group Photo with Participants and organizers](/uploads/img_20220623_135954_2.jpg "Group Photo with Participants and organizers")
+![Ladies working on their jewelry](/uploads/img_20220623_133039_2.jpg "Ladies working on their jewelry")
 
 As it was lunch time, NCWI sponsored lunch for all ladies who participated and also for the organizing members.
