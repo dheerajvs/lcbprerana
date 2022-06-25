@@ -2,8 +2,8 @@
 layout: layouts/ActivityLayout.astro
 title: 1 Full day festive meal for children and care takers
 image: /uploads/img_20220612_135100_3.jpg
-description: Full day festive meal for children at Janaseva Samruddi Education
-  And Rural Development Society,
+description: Special meals for children at Janaseva Samruddi Education And Rural
+  Development Society
 date: 2022-06-12
 causeAndProjectType: "Hunger: Meal Preparation and Distribution"
 address: Jana Seva Orphanage, Thurahalli Road, Jayanagar housing society layout,
