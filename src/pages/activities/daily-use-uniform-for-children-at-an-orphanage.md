@@ -2,8 +2,8 @@
 layout: layouts/ActivityLayout.astro
 title: Daily use uniform for children at an orphanage
 image: /uploads/img_20220612_134050_2.jpg
-description: Uniform was donated for 25 boys of age 6-16years at Jana Seva
-  Samruddi Janaseva Samruddi Education And Rural Development Society (R)
+description: Uniforms for 25 boys at Jana Seva Samruddi Education & Rural
+  Development Society®
 date: 2022-06-12
 causeAndProjectType: "Other: Other Service Activity"
 address: Jana Seva Orphanage, Thurahalli Road, Jayanagar housing society layout,
