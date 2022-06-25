@@ -1,6 +1,6 @@
 ---
 layout: layouts/ActivityLayout.astro
-title: Skill Development at Abhayashrama
+title: Skill Development Workshop - Warli Art Painting at Vatsalya Abhayashrama
 image: /uploads/skill-development-abhayashrama.jpg
 description: Skill development workshop for children at Vatsalya Abhayashrama
 date: 2022-04-22
