@@ -1,6 +1,7 @@
 ---
 layout: layouts/ActivityLayout.astro
-title: "Skill Development: Fabric Jewelry Workshop "
+title: Skill Development Workshop - Fabric Jewelry for children at Vatsalya
+  Abhayashrama
 image: /uploads/fabric-jewellery-workshop.jpg
 description: "Skill Development: Fabric jewelry making workshop for children at
   Vatsalya Abhayashrama"
