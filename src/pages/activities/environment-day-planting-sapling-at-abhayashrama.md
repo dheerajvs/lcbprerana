@@ -1,7 +1,7 @@
 ---
 layout: layouts/ActivityLayout.astro
 title: Environment Day Planting Sapling at Abhayashrama
-image: /uploads/img_20220615_121814_2.jpg
+image: /uploads/sapling.jpg
 description: Environment Day Planting Sapling at Abhayashrama
 date: 2022-06-16
 causeAndProjectType: "Environment: Tree Planting and Tree Care"
