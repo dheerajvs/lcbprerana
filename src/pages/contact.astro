@@ -1,22 +1,46 @@
 ---
-  import BaseLayout from 'layouts/BaseLayout.astro'
+import BaseLayout from "layouts/BaseLayout.astro"
 ---
 
 <BaseLayout title="Contact">
-  <form class="card card-content" name="contact" method="POST" action="/success" data-netlify="true">
+  <form
+    class="card card-content"
+    name="contact"
+    method="POST"
+    action="/success"
+    data-netlify="true"
+  >
     <h2>Contact us</h2>
     <div>
-      <label for="name">Name:</label><input autocomplete="name" id="name" name="name" required type="text" />
+      <label for="name">Name:</label><input
+        autocomplete="name"
+        id="name"
+        name="name"
+        required
+        type="text"
+      />
     </div>
     <div>
-      <label for="phone">Phone:</label><input autocomplete="tel" id="phone" name="phone" required type="tel" />
+      <label for="phone">Phone:</label><input
+        autocomplete="tel"
+        id="phone"
+        name="phone"
+        required
+        type="tel"
+      />
     </div>
     <div>
-      <label for="email">Email: <span class="optional">(optional)</span></label><input autocomplete="email" id="email"
-        name="email" type="email" />
+      <label for="email"
+        >Email: <span class="optional">(optional)</span>
+      </label><input autocomplete="email" id="email" name="email" type="email"
+      />
     </div>
     <div>
-      <label for="message">Message:</label><textarea id="message" name="message" required rows={3}></textarea>
+      <label for="message">Message:</label><textarea
+        id="message"
+        name="message"
+        required
+        rows={3}></textarea>
     </div>
     <button type="submit">Send</button>
   </form>
@@ -29,7 +53,7 @@
     margin-bottom: 1.75rem;
   }
 
-  form>div {
+  form > div {
     margin-bottom: 1rem;
   }
 

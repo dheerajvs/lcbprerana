@@ -1,12 +1,12 @@
 ---
-import { Markdown } from 'astro/components'
-import { Img } from 'astro-imagetools/components'
-import BaseLayout from 'layouts/BaseLayout.astro'
-import Officers from 'components/About/Officers.astro'
-import Button from 'components/ui/Button.astro'
-import about from 'data/about.json'
+import { Markdown } from "astro/components"
+import { Img } from "astro-imagetools/components"
+import BaseLayout from "layouts/BaseLayout.astro"
+import Officers from "components/About/Officers.astro"
+import Button from "components/ui/Button.astro"
+import about from "data/about.json"
 // @ts-expect-error
-import type { About } from 'types/index.d.ts'
+import type { About } from "types/index.d.ts"
 
 const data: About = about
 ---
@@ -14,9 +14,16 @@ const data: About = about
 <BaseLayout title="About">
   <section>
     <div class="card">
-      <Img src={data.image} alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
+      <Img
+        src={data.image}
+        alt=""
+        width={984}
+        attributes={{ img: { class: "card-image" } }}
+      />
       <div class="card-content">
-        <Markdown content={data.about} />
+        <Markdown content={data.about}>
+
+        </Markdown>
         <Button kind="secondary" href="/contact/">Contact us</Button>
       </div>
     </div>

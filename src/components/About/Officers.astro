@@ -1,7 +1,7 @@
 ---
-import { Img } from 'astro-imagetools/components'
+import { Img } from "astro-imagetools/components"
 // @ts-expect-error
-import type { About } from 'types/index.d.ts'
+import type { About } from "types/index.d.ts"
 
 export interface Props {
   officers: About.officers
@@ -13,14 +13,23 @@ const { officers } = Astro.props as Props
 <h2>Office Bearers</h2>
 <ul>
   {officers.map(officer => (
-  <li>
-    <Img src={officer.photo} alt="" breakpoints={[180]} placeholder="none" attributes={ { img: {
-      style: 'border-radius: 50%; width: 56px; height: 56px;' } } } />
-    <div class="name-plate">
-      <div class="name">{officer.name}</div>
-      <div class="title">{officer.title}</div>
-    </div>
-  </li>
+    <li>
+      <Img
+        src={officer.photo}
+        alt=""
+        breakpoints={[180]}
+        placeholder="none"
+        attributes={{
+          img: {
+            style: "border-radius: 50%; width: 56px; height: 56px;",
+          },
+        }}
+      />
+      <div class="name-plate">
+        <div class="name">{officer.name}</div>
+        <div class="title">{officer.title}</div>
+      </div>
+    </li>
   ))}
 </ul>
 

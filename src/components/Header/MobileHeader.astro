@@ -1,17 +1,16 @@
 ---
-  export interface Props {
-    title: string
-  }
+export interface Props {
+  title: string
+}
 
-  const { title } = Astro.props as Props
+const { title } = Astro.props as Props
 
-  const navItems = [
-    { title: 'Home', url: '/' },
-    { title: 'About', url: '/about/' },
-    { title: 'Activities', url: '/activities/' },
-    { title: 'Contact', url: '/contact/' },
-  ]
-
+const navItems = [
+  { title: "Home", url: "/" },
+  { title: "About", url: "/about/" },
+  { title: "Activities", url: "/activities/" },
+  { title: "Contact", url: "/contact/" },
+]
 ---
 
 <div class="root">
@@ -21,18 +20,17 @@
   </div>
   <nav>
     <ul>
-      {navItems.map(item =>(
-      <li>
-        <a href={item.url}>
-          <div class="title">{item.title}
-            {
-            (title === item.title || title === '' && item.url === '/')
-            &&
-            <div class="underline" />
-            }
-          </div>
-        </a>
-      </li>
+      {navItems.map(item => (
+        <li>
+          <a href={item.url}>
+            <div class="title">
+              {item.title}
+              {(title === item.title || (title === "" && item.url === "/")) && (
+                <div class="underline" />
+              )}
+            </div>
+          </a>
+        </li>
       ))}
     </ul>
   </nav>

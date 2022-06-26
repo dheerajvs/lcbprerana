@@ -1,14 +1,14 @@
 ---
-  export interface Props {
-    kind?: 'primary' | 'secondary' | 'tertiary'
-    href?: string
-  }
+export interface Props {
+  kind?: "primary" | "secondary" | "tertiary"
+  href?: string
+}
 
-  const { kind = 'primary', href } = Astro.props as Props
+const { kind = "primary", href } = Astro.props as Props
 ---
 
 <a class={kind} {href}>
-  <slot />
+  <slot></slot>
 </a>
 
 <style>

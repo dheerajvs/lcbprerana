@@ -1,6 +1,6 @@
 ---
-  import { Img } from 'astro-imagetools/components'
-  import Links from 'components/Links.astro'
+import { Img } from "astro-imagetools/components"
+import Links from "components/Links.astro"
 ---
 
 <footer>
@@ -9,15 +9,28 @@
       <Links />
     </div>
     <div class="lci-nameplate">
-      <Img src="/src/images/lci_sig_white.png" alt="Lions Clubs International" breakpoints={[570]} placeholder="none"
-        attributes={ { img: { style: 'display: block; width: 190px;' } } } />
-      <small class="lci-description">Lions Clubs International is the largest service club organisation in
-        the world. Our 14 lakh members are serving locally and globally to
-        help take on some of the biggest challenges facing humanity.</small>
+      <Img
+        src="/src/images/lci_sig_white.png"
+        alt="Lions Clubs International"
+        breakpoints={[570]}
+        placeholder="none"
+        attributes={{ img: { style: "display: block; width: 190px;" } }}
+      />
+      <small class="lci-description"
+        >Lions Clubs International is the largest service club organisation in
+        the world. Our 14 lakh members are serving locally and globally to help
+        take on some of the biggest challenges facing humanity.
+      </small>
     </div>
   </div>
-  <small class="author">Website developed by <a href="https://github.com/dheerajvs/lcbprerana" rel="noopener"
-      target="_blank">Lion Dheeraj V. S.</a></small>
+  <small class="author"
+    >Website developed by <a
+      href="https://github.com/dheerajvs/lcbprerana"
+      rel="noopener"
+      target="_blank"
+      >Lion Dheeraj V. S.
+    </a>
+  </small>
 </footer>
 
 <style>
@@ -48,7 +61,7 @@
     font-size: x-small;
   }
 
-  .author>a {
+  .author > a {
     color: inherit;
   }
 

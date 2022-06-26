@@ -1,33 +1,43 @@
 ---
-import '@splidejs/splide/dist/css/splide-core.min.css'
-import '@splidejs/splide/dist/css/splide.min.css'
-import './carousel.css'
-import { Img } from 'astro-imagetools/components'
+import "@splidejs/splide/dist/css/splide-core.min.css"
+import "@splidejs/splide/dist/css/splide.min.css"
+import "./carousel.css"
+import { Img } from "astro-imagetools/components"
 // @ts-expect-error
 import type { Activity } from "types/index.d.ts"
 
 const chronologicalSort = (
-  { frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }
-) => date1 > date2 ? -1 : date1 < date2 ? 1 : 0
+  { frontmatter: { date: date1 } },
+  { frontmatter: { date: date2 } }
+) => (date1 > date2 ? -1 : date1 < date2 ? 1 : 0)
 
-const activities = (await Astro.glob<Activity>('../../pages/activities/*.md'))
+const activities = (await Astro.glob<Activity>("../../pages/activities/*.md"))
   .sort(chronologicalSort)
   .slice(0, 5)
-
 ---
 
-<div id="home-activities-carousel" class="splide" aria-label="Recent activities">
+<div
+  id="home-activities-carousel"
+  class="splide"
+  aria-label="Recent activities"
+>
   <div class="splide__track">
     <ul class="splide__list">
       {activities.map(({ frontmatter, url }) => (
-      <li class="splide__slide">
-        <a class="splide__slide__container card" href={ url.endsWith('/') ? url : url + '/' }>
-          <Img src={frontmatter.image} alt="" width={984} attributes={{ img: { class: 'card-image' } }} />
-          <div class="caption">
-            {frontmatter.description}
-          </div>
-        </a>
-      </li>
+        <li class="splide__slide">
+          <a
+            class="splide__slide__container card"
+            href={url.endsWith("/") ? url : url + "/"}
+          >
+            <Img
+              src={frontmatter.image}
+              alt=""
+              width={984}
+              attributes={{ img: { class: "card-image" } }}
+            />
+            <div class="caption">{frontmatter.description}</div>
+          </a>
+        </li>
       ))}
     </ul>
   </div>
@@ -36,13 +46,13 @@ const activities = (await Astro.glob<Activity>('../../pages/activities/*.md'))
 <script>
   import Splide from "@splidejs/splide"
 
-  document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#home-activities-carousel', {
-      type: 'loop',
+  document.addEventListener("DOMContentLoaded", function () {
+    new Splide("#home-activities-carousel", {
+      type: "loop",
       autoplay: true,
       interval: 4000,
     }).mount()
-  });
+  })
 </script>
 
 <style>
