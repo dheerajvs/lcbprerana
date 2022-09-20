@@ -13,7 +13,7 @@ const chronologicalSort = (
 
 const activities = (await Astro.glob<Activity>("../../pages/activities/*.md"))
   .sort(chronologicalSort)
-  .slice(0, 5)
+  .slice(0, 7)
 ---
 
 <div
