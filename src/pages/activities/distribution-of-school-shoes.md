@@ -9,4 +9,4 @@ address: Vatsalya Abhayashrama, Wilson Garden, Bangalore, 8th Main Rd, Vinayaka
   Nagar, Wilson Garden, Bengaluru, Karnataka 560027, India
 served: 30
 ---
-Procured school shoes and distributed to children residing at Vatsalya Abhayasharama who study in government school
+We sponsored the procurement of school shoes and distributed them to children residing at Vatsalya Abhayasharama who study in a government school.
