@@ -1,7 +1,7 @@
 ---
 layout: layouts/ActivityLayout.astro
 title: Dusshera dolls for children at Vatsalya Abhayashrama
-image: /uploads/img_20220925_111805_2-1-.jpg
+image: /uploads/img_20220925_111805_2.jpg
 description: Dusshera dolls for Navaratri Celebrations for Children at Vatsalya Abhayashrama
 date: 2022-09-25
 causeAndProjectType: "Other: Awareness, Education and Advocacy"
