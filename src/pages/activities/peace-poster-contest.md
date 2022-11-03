@@ -1,7 +1,7 @@
 ---
 layout: layouts/ActivityLayout.astro
 title: "Peace Poster Contest "
-image: /uploads/peace-poster.jpg
+image: /uploads/img_20221030_082810_2.jpg
 description: Peace Poster Contest was conducted for children at Doddakallasandra
   Government Primary School this year
 date: 2022-10-29
