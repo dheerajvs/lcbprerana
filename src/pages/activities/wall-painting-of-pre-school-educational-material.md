@@ -1,6 +1,6 @@
 ---
 layout: layouts/ActivityLayout.astro
-title: Wall painting of pre-school educational material
+title: Anganwadi Wall Paintings with Pre-School Educational Material
 image: /uploads/img_20220529_155125_2-1-.jpg
 description: Ragigudda Slum-1 anganwadi wall painting of pre-school educational
   material and moral stories
