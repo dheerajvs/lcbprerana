@@ -13,4 +13,4 @@ served: 1000
 
 This would help many under privilege people to take dialysis treatment free of cost.
 
-A﻿s a recognition to this contribution made *Lion Sowmya B.A. the Charter President of Lions Club of Bangalore Prerana*, she was honored with a plaque by *Immediate Past International President Douglas X. Alexander*. A very proud moment at early days of our club start
+A﻿s a recognition to this contribution made, *Lion Sowmya B.A. the Charter President of Lions Club of Bangalore Prerana* was honored with a *Progressive Melvin Jones Fellowship (PMJF)* plaque by *Immediate Past International President Douglas X. Alexander*. A very proud moment at early days of our club start within a year
