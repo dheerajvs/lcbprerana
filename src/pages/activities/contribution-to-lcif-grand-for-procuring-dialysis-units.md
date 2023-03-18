@@ -1,8 +1,8 @@
 ---
 layout: layouts/ActivityLayout.astro
-title: Contribution to LCIF Grand for procuring Dialysis Units
+title: Contribution to LCIF Grand
 image: /uploads/img_20221208_205914_2.jpg
-description: Funds donated by our club president Lion Sowmya B.A. towards LCIF Grant
+description: Funds donated towards LCIF Grant
 date: 2022-12-09
 causeAndProjectType: "Diabetes: Diabetes Support Group"
 address: Hotel Chancery Pavilion, 135, Residency Rd, Shanthala Nagar, Ashok
