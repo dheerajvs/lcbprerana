@@ -12,36 +12,38 @@ export async function getStaticPaths({ paginate }) {
 
   const activities = await Astro.glob<Activity>("./*.md")
 
-  return paginate(activities.sort(sorter), { pageSize: 20 })
+  return paginate(activities.sort(sorter), { pageSize: 50 })
 }
 
 const { page } = Astro.props as ActivityPageProps
 ---
 
 <BaseLayout title="Activities">
-  {page.data.map(({ frontmatter, url }) => (
-    <article class="card">
-      <a href={url.endsWith("/") ? url : url + "/"}>
-        <Img
-          src={frontmatter.image}
-          alt=""
-          width={984}
-          attributes={{ img: { class: "card-image" } }}
-        />
-        <div class="card-content">
-          <header>
-            <div class="title">{frontmatter.title}</div>
-            <time datetime={frontmatter.date}>
-              {DateTime.fromISO(frontmatter.date)
-                .setLocale("en-IN")
-                .toLocaleString(DateTime.DATE_FULL)}
-            </time>
-          </header>
-          <div>{frontmatter.description}</div>
-        </div>
-      </a>
-    </article>
-  ))}
+  {
+    page.data.map(({ frontmatter, url }) => (
+      <article class="card">
+        <a href={url.endsWith("/") ? url : url + "/"}>
+          <Img
+            src={frontmatter.image}
+            alt=""
+            width={984}
+            attributes={{ img: { class: "card-image" } }}
+          />
+          <div class="card-content">
+            <header>
+              <div class="title">{frontmatter.title}</div>
+              <time datetime={frontmatter.date}>
+                {DateTime.fromISO(frontmatter.date)
+                  .setLocale("en-IN")
+                  .toLocaleString(DateTime.DATE_FULL)}
+              </time>
+            </header>
+            <div>{frontmatter.description}</div>
+          </div>
+        </a>
+      </article>
+    ))
+  }
 </BaseLayout>
 
 <style>
