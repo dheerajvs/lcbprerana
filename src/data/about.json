@@ -13,6 +13,11 @@
       "photo": "/uploads/krishna-g.-herle.jpg"
     },
     {
+      "name": "Lion Ravishankar Mallya",
+      "title": "1st Vice President",
+      "photo": "/uploads/ravishankar-mallya.jpg"
+    },
+    {
       "name": "Lion Lakshmi G Herle",
       "title": "Club Secretary",
       "photo": "/uploads/lakshmi-k-herle.jpg"
@@ -21,11 +26,6 @@
       "name": "Lion Dheeraj V.S.",
       "title": "Club Treasurer",
       "photo": "/uploads/dheeraj.jpg"
-    },
-    {
-      "name": "Lion Ravishankar Mallya",
-      "title": "1st Vice President",
-      "photo": "/uploads/ravishankar-mallya.jpg"
     }
   ]
 }
