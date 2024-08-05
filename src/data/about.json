@@ -8,24 +8,19 @@
       "photo": "/uploads/img-20230810-wa0024.jpg"
     },
     {
-      "name": "Lion Dr. Shiva Shankar G. N., PMJF",
-      "title": "Club President",
-      "photo": "/uploads/member-shivashankar.jpg"
-    },
-    {
       "name": "Lion Krishna G. Herle",
-      "title": "I Vice President",
+      "title": "Club President",
       "photo": "/uploads/krishna-g.-herle.jpg"
     },
     {
-      "name": "Lion Dr.Ashok Jayaram",
+      "name": "Lion Lakshmi G Herle",
       "title": "Club Secretary",
-      "photo": "/uploads/dr.ashok-jayaram.jpg"
+      "photo": "/uploads/lakshmi-k-herle.jpg"
     },
     {
-      "name": "Lion Sairam K.R.",
+      "name": "Lion Dheeraj V.S.",
       "title": "Club Treasurer",
-      "photo": "/uploads/sairam.jpeg"
+      "photo": "/uploads/dheeraj.jpg"
     }
   ]
 }
