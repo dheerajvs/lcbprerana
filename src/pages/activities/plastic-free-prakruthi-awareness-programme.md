@@ -2,7 +2,8 @@
 layout: layouts/ActivityLayout.astro
 title: '"Plastic Free Prakruthi" Awareness Programme'
 image: /uploads/img_20251030_114401~2-1-.jpg
-description: Awareness programme for Youth about their responsibilities.
+description: '"Plastic Free Prakruthi" An Awareness Programme for Youth about
+  "My Responsibilities".'
 date: 2025-11-07
 causeAndProjectType: "Environment: Environmental Awareness, Education and Advocacy"
 address: School Children
